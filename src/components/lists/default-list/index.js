@@ -23,6 +23,7 @@ export default function DefaultList(props){
         style={[GeneralStyles.aligns.content, Style.listContainer, customStyle]}
         keyExtractor={(item) => `${item?.id}`}
         renderItem={({item}) => renderItem(item)}
+        directionalLockEnabled
       /> 
     </View>
   );

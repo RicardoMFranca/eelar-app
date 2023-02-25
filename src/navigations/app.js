@@ -27,21 +27,21 @@ export default function AppTab() {
         name="Home" 
         component={HomeStack} 
         options={({ route }) => ({
-          tabBarVisible: getTabBarVisibility(route, 1)
+          tabBarVisible: false
         })} 
       />
       <Tab.Screen 
         name="About" 
         component={AboutStack}
         options={({ route }) => ({
-          tabBarVisible: getTabBarVisibility(route, 1)
+          tabBarVisible: false
         })}  
       />
       <Tab.Screen 
         name="Profile" 
         component={ProfileStack} 
         options={({ route }) => ({
-          tabBarVisible: getTabBarVisibility(route, 1)
+          tabBarVisible: false
         })} 
       />
     </Tab.Navigator>

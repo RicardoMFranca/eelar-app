@@ -1,4 +1,5 @@
 export const PRIMARY = '#407BFF';
+export const PRIMARY_MEDIUM = '#004FFF';
 export const PRIMARY_LIGHT = '#9EBCFF';
 export const SECONDARY = '#FFB1A9';
 

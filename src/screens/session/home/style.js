@@ -45,39 +45,52 @@ const Style = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
-    categoryCard: {
-        backgroundColor: Colors.PRIMARY_LIGHT,
-        borderRadius: Mixins.scaleSize(12),
-        flexDirection: 'row',
-        alignItems: 'center',
-        padding: Mixins.scaleSize(16),
-        marginRight: Mixins.scaleSize(16)
-        
-    },
-    categoryIconContainer: {
-        height: Mixins.scaleSize(32),
-        width: Mixins.scaleSize(32),
-        backgroundColor: Colors.WHITE_DEFAULT,
-        borderRadius: Mixins.scaleSize(8),
-        justifyContent: 'center',
-        alignContent: 'center'
-    },
-    categoriesListHeader: {
-        ...Typography.FONT_BOLD,
+    homeTitle: {
         textAlign: 'left',
-        width: '100%',
         paddingLeft: Mixins.scaleSize(24),
         marginTop: Mixins.scaleSize(32),
-        marginBottom: Mixins.scaleSize(8),
-        fontSize: Typography.FONT_SIZE_16
+        marginBottom: Mixins.scaleSize(16),
     },
-    categoriesList: {
+    homeList: {
         paddingHorizontal: Mixins.scaleSize(24),
-        width: Mixins.WINDOW_WIDTH,
-        height: Mixins.scaleSize(100),
         flex: 0,
-        maxHeight: Mixins.scaleSize(64),
-        height: Mixins.scaleSize(64)
+        flexGrow: 0,
+    },
+    selectedPlaces: {
+        width: '100%',
+    },
+    availableEventsContainer: {
+        borderRadius: Mixins.scaleSize(24),
+        paddingVertical: Mixins.scaleSize(40),
+        paddingLeft: Mixins.scaleSize(16),
+        flexDirection: 'row',
+        position: 'relative',
+        justifyContent: 'space-between',
+        marginTop: Mixins.scaleSize(32),
+    },
+    eventsImage: {
+        position: 'absolute',
+        right: 0,
+        bottom: 0
+    },
+    eventCardTitle: {
+        color: Colors.WHITE_DEFAULT,
+        fontSize: Typography.FONT_SIZE_16,
+        fontWeight: 'bold',
+    },
+    eventCardBtn: {
+        borderRadius: Mixins.scaleSize(8),
+        backgroundColor: Colors.PRIMARY_MEDIUM,
+        width: Mixins.scaleSize(116),
+        height: Mixins.scaleSize(36),
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: Mixins.scaleSize(16)
+    },
+    eventCardBtnLabel: {
+        ...Typography.FONT_MEDIUM,
+        fontSize: Typography.FONT_SIZE_14,
+        color: Colors.WHITE_DEFAULT,
     }
 });
 

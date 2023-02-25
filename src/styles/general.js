@@ -32,8 +32,8 @@ export const aligns = StyleSheet.create({
     width32: {
         width: Mixins.WINDOW_WIDTH - Mixins.scaleSize(64)
     },
-    width20: {
-        width: Mixins.WINDOW_WIDTH - Mixins.scaleSize(40)
+    width24: {
+        width: Mixins.WINDOW_WIDTH - Mixins.scaleSize(48)
     },
     topCenter: {
         position: 'absolute',
@@ -83,6 +83,16 @@ export const buttons = StyleSheet.create({
         fontSize: Typography.FONT_SIZE_18,
         ...Typography.FONT_REGULAR
     },
+}); 
+
+export const fonts = StyleSheet.create({
+    title: {
+        ...Typography.FONT_BOLD,
+        fontSize: Typography.FONT_SIZE_16,
+        color: Colors.BLACK_DEFAULT,
+        width: '100%',
+        textAlign: 'left',
+    }
 }); 
 
 export const forms = StyleSheet.create({
