@@ -7,22 +7,28 @@ EELAR é um aplicativo desenvolvido em parceria com a prefeitura de Niterói, qu
 A instalação apenas requere a instalação das dependências.
 
 * Instalação das dependências
-- Android
-```
-npm install
-```
--IOS
-```
-npm install
-cd ./ios && pod install
-```
+
+  Android
+  ```
+  npm install
+  ```
+
+  IOS
+  ```
+  npm install
+  ```
+  ```
+  cd ./ios && pod install
+  ```
 
 * Executando projeto
--Android
-```
-npx react-native run-android
-```
--IOS
-```
-npx react-native run-ios
-```
+
+  Android
+  ```
+  npx react-native run-android
+  ```
+
+  IOS
+  ```
+  npx react-native run-ios
+  ```
