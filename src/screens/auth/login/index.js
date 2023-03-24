@@ -51,6 +51,7 @@ export default function LoginScreen(props){
           <Image source={require('../../../assets/images/login-yoga/login-yoga.png')} style={Style.loginImg}/>
           <View style={GeneralStyles.aligns.width40}>
             <DefaultInput 
+              label={""}
               value={email}
               onChangeText={setEmail}
               placeholder={"E-mail"}
@@ -58,7 +59,7 @@ export default function LoginScreen(props){
               keyboardType={"email-address"}
             />
             <DefaultInput 
-              // label={"Senha"}
+              label={""}
               value={password}
               onChangeText={setPassword}
               placeholder={"Senha"}

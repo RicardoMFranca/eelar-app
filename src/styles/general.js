@@ -43,3 +43,26 @@ export const aligns = StyleSheet.create({
         width: '90%',
     }
 });
+
+export const forms = StyleSheet.create({
+    container: {
+        flexDirection: 'column',
+        alignItems: 'flex-start'
+    }, 
+    label: {
+        ...Typography.FONT_REGULAR,
+        fontSize: Typography.FONT_SIZE_14,
+        color: Colors.BLACK_DEFAULT,
+        marginVertical: Mixins.scaleSize(10),
+    },
+    input: {
+        fontSize: Typography.FONT_SIZE_28,
+        color: Colors.BLACK_DEFAULT,
+        width: '100%',
+        flexDirection: 'column',
+        backgroundColor: Colors.WHITE_DEFAULT,
+        borderWidth: Mixins.scaleSize(1),
+        borderColor: Colors.BLACK_TONE_1,
+        borderRadius: Mixins.scaleSize(8)
+    },
+}); 
