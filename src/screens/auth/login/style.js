@@ -2,41 +2,42 @@ import { StyleSheet } from 'react-native';
 import { Colors, Mixins, Typography } from '../../../styles';
 
 const Style = StyleSheet.create({
+  keyboardAwareContainer: {
+    backgroundColor: Colors.PRIMARY,
+  },
   loginContainer: {
     flex: 1,
+    alignItems: 'center'
   },
-  loginFormContainer: {
-    alignItems: 'center',
-    flex: 1,
-    marginTop: Mixins.scaleSize(54)
+  loginTitle: {
+    ...Typography.FONT_REGULAR,
+    fontSize: Typography.FONT_SIZE_15,
+    color: Colors.BLACK_DEFAULT,
+    width: '100%',
+    marginVertical: Mixins.scaleSize(24),
+    textAlign: 'center'
   },
-  alignIconInput: {
-    position: 'relative',
+  loginImg: {
+    width: Mixins.WINDOW_WIDTH,
+    resizeMode: 'contain'
   },
-  emailContainer: {
-    marginBottom: Mixins.scaleSize(24)
+  registerBtn: {
+    textAlign: 'center',
+    marginTop: Mixins.scaleSize(32)
   },
-  rememberMeContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: Mixins.scaleSize(24)
+  registerBtnBold: {
+    fontWeight: 'bold'
   },
-  rememberMeCheck: (isChecked) => ({
-    width: Mixins.scaleSize(23),
-    height: Mixins.scaleSize(23),
-    backgroundColor: isChecked ? Colors.BLACK : 'transparent',
-    borderColor: Colors.GRAY_LIGHT,
-    borderWidth: 1,
-    marginRight: Mixins.scaleSize(8),
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: Mixins.scaleSize(3)
-  }),
-  rememberMeText: {
-    ...Typography.FONT_SEMI_BOLD_2,
-    fontSize: Typography.FONT_SIZE_14,
-    borderColor: Colors.BLACK
-  }
+  loginBlob2: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0
+  },
+  loginBlob1: {
+    position: 'absolute',
+    top: 0,
+    left: 0
+  },
 });
 
 export default Style;

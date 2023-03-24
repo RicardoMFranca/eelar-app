@@ -4,6 +4,7 @@ import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { Colors } from '../styles';
 
 import MainStack from  './main';
+import { LoaderProvider } from '../contexts/loader';
 
 const navTheme = DefaultTheme;
 navTheme.colors.background = Colors.WHITE;
@@ -29,7 +30,9 @@ export default () => {
       linking={linking} 
       theme={navTheme}
     >
-      <MainStack /> 
+      <LoaderProvider>
+        <MainStack /> 
+      </LoaderProvider>
     </NavigationContainer>
   );
 }

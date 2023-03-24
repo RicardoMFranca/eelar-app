@@ -3,33 +3,43 @@ import * as Colors from './colors';
 import * as Typography from './typography';
 import * as Mixins from './mixins';
 
-export const header = StyleSheet.create({
-    align: (statusBarHeight) => ({
-        width: Mixins.WINDOW_WIDTH,
-        flexDirection: 'row',
-        justifyContent:'center', 
-        alignItems:'center',
-        marginTop: statusBarHeight
-    }),
-    text: {
-        color: Colors.BLACK,
-        fontSize: Typography.FONT_SIZE_13,
-        ...Typography.FONT_MEDIUM,
-    },
-    imageBackground: (background) => ({
-        width: Mixins.WINDOW_WIDTH,
-        height: '100%',
-        position: background ? background : `absolute`,
-        top: Mixins.scaleSize(0),
-        resizeMode: 'stretch'
-    }),
-    headerContainer: (height) => ({
-        marginBottom: Mixins.scaleSize(24),
-        position: 'relative',
-        height: Mixins.scaleSize(height),
-        flexDirection: 'row',
+export const aligns = StyleSheet.create({
+    container: {
+        flex: 1,
+        flexDirection: 'column',
         alignItems: 'center',
+        width: '100%',
+    },
+    width40: {
+        width: Mixins.WINDOW_WIDTH - Mixins.scaleSize(80)
+    },
+    width32: {
+        width: Mixins.WINDOW_WIDTH - Mixins.scaleSize(64)
+    },
+    width24: {
+        width: Mixins.WINDOW_WIDTH - Mixins.scaleSize(48)
+    },
+    topCenter: {
+        position: 'absolute',
+        bottom: '70%',
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    bottom: {
+        flex: 1,
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+    },
+    header: {
+        flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingHorizontal: Mixins.scaleSize(16)
-    }),
+        alignItems: 'center',
+        width: '90%',
+        marginTop: Mixins.scaleSize(50)
+    },
+    content: {
+        marginTop: Mixins.scaleSize(10),
+        width: '90%',
+    }
 });

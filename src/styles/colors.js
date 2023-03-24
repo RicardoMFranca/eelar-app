@@ -1,40 +1,35 @@
-export const PRIMARY = '#ECFC54';
-export const SECONDARY = '#F0F0F0';
+export const PRIMARY = '#407BFF';
+export const PRIMARY_MEDIUM = '#004FFF';
+export const PRIMARY_LIGHT = '#9EBCFF';
+export const SECONDARY = '#FFB1A9';
 
-export const WHITE = '#FFFFFF';
+export const WHITE_DEFAULT = '#FFFFFF';
 export const WHITE_TONE_1 = '#FFFCF2';
 
-export const BLACK = '#000000';
-export const BLACK_TONE_1 = '#342425';
+export const BLACK_DEFAULT = '#000000';
+export const BLACK_TONE_1 = '#332430';
 
-export const BRAND_YELLOW = '#FFC44A';
+// FEEDBACK POSITIVE
+export const SUCCESS_DARK = '#075400';
+export const SUCCESS_MEDIUM = '#0EAA00';
+export const SUCCESS_LIGHT = '#8AFF80';
 
-export const CHAT_MESSAGE = '#C0FFE1';
-export const CHAT_BACKGROUND = '#406A73';
-export const CHAT_GREEN = '#3CCC86';
-export const CHAT_PINK = '#CC3C92';
-export const CHAT_ORANGE = '#FAB235';
+// FEEDBACK NEGATIVE
+export const WARNING_DARK = '#A20315';
+export const WARNING_MEDIUM = '#D81616';
+export const WARNING_LIGHT = '#FF8080';
 
-// ACTIONS
-export const SUCCESS = '#41C42C';
-export const SUCCESS_SECONDARY = '#7FEE4B';
-export const SUCCESS_TERTIARY = '#3CCC86';
-export const WARNING = '#FAB235';
-export const FAIL = '#EE3232';
-export const FAIL_2 = '#E2293F';
-export const DANGER = '#FF5454';
-export const DANGER_2 = '#D53636';
+// FEEDBACK ALERT
+export const ALERT_DARK = '#947300';
+export const ALERT_MEDIUM = '#FBB300';
+export const ALERT_LIGHT = '#FFE380';
 
 // GRAYSCALE
 export const GRAY = '#DADADA';
-export const GRAY_LIGHT = '#CACFD1';
-export const GRAY_MEDIUM = '#808485';
-export const GRAY_MEDIUM_2 = '#B3B3B3';
-export const GRAY_DARK = '#666666';
-export const GRAY_DARK_2 = '#333333';
-export const GRAY_DARKEST = '#1E1F1F';
-export const GRAY_LIGHTEST = '#F4F4F4';
-export const GRAY_BLACK = '#302A2F';
+export const GRAY_LIGHT = '#E6E6E6';
+export const GRAY_MEDIUM = '#CACACA';
+export const GRAY_DARK = '#8A8A8A';
+export const GRAY_LIGHTEST = '#D7D7D7';
 
 const hexToRgb = hex => {
     // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")

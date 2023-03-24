@@ -6,11 +6,6 @@ export const FONT_FAMILY_MEDIUM = 'Inter-Medium';
 export const FONT_FAMILY_SEMI_BOLD = 'Inter-SemiBold'
 export const FONT_FAMILY_BOLD = 'Inter-Bold';
 
-export const FONT_FAMILY_REGULAR_2 = 'Rubik-Regular';
-export const FONT_FAMILY_MEDIUM_2 = 'Rubik-Medium';
-export const FONT_FAMILY_SEMI_BOLD_2 = 'Rubik-SemiBold'
-export const FONT_FAMILY_BOLD_2 = 'Rubik-Bold';
-
 // FONT WEIGHT
 export const FONT_WEIGHT_REGULAR = '400';
 export const FONT_WEIGHT_MEDIUM = '500';
@@ -28,7 +23,6 @@ export const FONT_SIZE_17 = scaleSize(17);
 export const FONT_SIZE_18 = scaleSize(18);
 export const FONT_SIZE_20 = scaleSize(20);
 export const FONT_SIZE_21 = scaleSize(21);
-export const FONT_SIZE_22 = scaleSize(22);
 export const FONT_SIZE_24 = scaleSize(24);
 export const FONT_SIZE_28 = scaleSize(28);
 export const FONT_SIZE_32 = scaleSize(32);
@@ -58,25 +52,5 @@ export const FONT_SEMI_BOLD = {
 
 export const FONT_BOLD = {
   fontFamily: FONT_FAMILY_BOLD,
-  fontWeight: FONT_WEIGHT_BOLD,
-};
-
-export const FONT_REGULAR_2 = {
-  fontFamily: FONT_FAMILY_REGULAR_2,
-  fontWeight: FONT_WEIGHT_REGULAR,
-};
-
-export const FONT_MEDIUM_2 = {
-  fontFamily: FONT_FAMILY_MEDIUM_2,
-  fontWeight: FONT_WEIGHT_MEDIUM,
-};
-
-export const FONT_SEMI_BOLD_2 = {
-  fontFamily: FONT_FAMILY_SEMI_BOLD_2,
-  fontWeight: FONT_WEIGHT_SEMI_BOLD,
-}
-
-export const FONT_BOLD_2 = {
-  fontFamily: FONT_FAMILY_BOLD_2,
   fontWeight: FONT_WEIGHT_BOLD,
 };
