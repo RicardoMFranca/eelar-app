@@ -7,7 +7,10 @@ export default function AmbientCard(props){
   const { ambient } = props;
   
   return (
-    <TouchableOpacity style={Style.ambientCard}>
+    <TouchableOpacity 
+      style={Style.ambientCard}
+      onPress={() => props.navigation.navigate('Ambient', {ambient: ambient})}
+    >
       <Image source={require('../../assets/images/temp/parque-da-cidade.png')} style={Style.ambientThumbNail}/>
       {/* <Image source={{uri: ambient?.foto_principal}} /> */}
       <LinearGradient

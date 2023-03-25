@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Image, ScrollView, Text, 
+import { Image, ScrollView, StatusBar, Text, TextInput, 
   TouchableOpacity, View, SafeAreaView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import { Colors, GeneralStyles, Mixins } from '../../../styles';
 import Style from './style';
@@ -12,7 +13,7 @@ import CategoryCard from '../../../components/category-card';
 import AmbientCard from '../../../components/ambient-card';
 import WavyHeader from '../../../components/wavy-header';
 
-export default function HomeScreen(props){
+export default function EventsScreen(props){
   const { setLoading } = useContext(LoaderContext);
 
   const [refreshing, setRefreshing] = useState(false);
@@ -62,6 +63,31 @@ export default function HomeScreen(props){
     ];
     setAmbients(ambients);
   }
+
+  const header = (
+    <View style={Style.wavyHeader}>
+      <StatusBar 
+        barStyle="light-content" 
+      />
+      <Image source={require('../../../assets/images/wave-background/wave-background.png')} style={Style.waveBackground}/>
+      <View style={Style.headerContiner}>
+        <Text style={Style.headerTitle}>Aqui um texto de no máximo duas linhas</Text>
+        <View style={Style.searchBarContainer}>
+          <TextInput 
+            style={Style.searchBar}
+            placeholder="Que lugar você quer conhecer hoje?"
+          />
+          <TouchableOpacity style={Style.searchBtn}>
+            <Icon 
+              name={'search'} 
+              size={Mixins.scaleSize(20)} 
+              color={Colors.WHITE_DEFAULT } 
+            />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  );
 
   const availableEvents = (
     <View style={GeneralStyles.aligns.width24}>
