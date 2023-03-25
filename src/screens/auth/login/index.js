@@ -84,7 +84,7 @@ export default function LoginScreen(props){
             />
 
             <DefaultBtn 
-              onPress={() => loginTest(email, password)} 
+              onPress={() => props.navigation.navigate("Home")}
               label={'Entrar'}
               disabled={!email || !password}
               textColor={Colors.WHITE_DEFAULT}

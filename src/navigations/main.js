@@ -3,10 +3,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import SplashScreen from '../components/splash-screen';
 
-import InitialScreen from '../screens/auth/initial';
-import LoginScreen from '../screens/auth/login';
-import RegisterScreen from '../screens/auth/register';
-
+import AuthStack from './auth';
+import SessionStack from './session';
 
 const Stack = createNativeStackNavigator();
 
@@ -35,9 +33,8 @@ export default function MainStack(){
         headerShown: false
       }}
     > 
-      <Stack.Screen name="Initial" component={InitialScreen} />
-      <Stack.Screen name="Login" component={LoginScreen} />
-      <Stack.Screen name="Register" component={RegisterScreen} />
+      <Stack.Screen name="Auth" component={AuthStack} />
+      <Stack.Screen name="Session" component={SessionStack}/>
     </Stack.Navigator>
   );
 }
