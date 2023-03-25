@@ -66,3 +66,13 @@ export const forms = StyleSheet.create({
         borderRadius: Mixins.scaleSize(8)
     },
 }); 
+
+export const fonts = StyleSheet.create({
+    title: {
+        ...Typography.FONT_BOLD,
+        fontSize: Typography.FONT_SIZE_16,
+        color: Colors.BLACK_DEFAULT,
+        width: '100%',
+        textAlign: 'left',
+    }
+}); 

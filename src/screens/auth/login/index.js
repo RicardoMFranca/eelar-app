@@ -39,7 +39,7 @@ export default function LoginScreen(props){
   const loginTest = async (email, password) => { 
     const resp = {id: 1, nome: 'Teste', email, password, authentication_token: 'teste', tipo: 'normal'};
     await StorageService.setUser(resp);
-    props.navigation.navigate('App');
+    props.navigation.navigate('Session');
   }
 
   return (
@@ -84,7 +84,7 @@ export default function LoginScreen(props){
             />
 
             <DefaultBtn 
-              onPress={() => props.navigation.navigate("Home")}
+              onPress={() => loginTest(email, password)}
               label={'Entrar'}
               disabled={!email || !password}
               textColor={Colors.WHITE_DEFAULT}

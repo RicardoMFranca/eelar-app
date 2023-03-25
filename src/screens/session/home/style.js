@@ -67,6 +67,7 @@ const Style = StyleSheet.create({
         position: 'relative',
         justifyContent: 'space-between',
         marginTop: Mixins.scaleSize(32),
+        marginBottom: Mixins.scaleSize(48),
     },
     eventsImage: {
         position: 'absolute',

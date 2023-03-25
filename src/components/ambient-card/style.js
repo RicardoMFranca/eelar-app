@@ -10,8 +10,8 @@ const Style = StyleSheet.create({
         borderRadius: Mixins.scaleSize(12),
     },
     ambientThumbNail: {
-        height: '100%',
         width: '100%',
+        height: Mixins.scaleSize(230),
         position: 'absolute',
         top: 0,
         left: 0,
@@ -26,8 +26,21 @@ const Style = StyleSheet.create({
         zIndex: 2,
         borderBottomEndRadius: Mixins.scaleSize(12),
         borderBottomStartRadius: Mixins.scaleSize(12),
+        borderRadius: Mixins.scaleSize(12),
         justifyContent: 'flex-end',
         alignItems: 'flex-start',
+        padding: Mixins.scaleSize(16),
+        paddingBottom: Mixins.scaleSize(24),
+    },
+    ambientName: {
+        ...Typography.FONT_BOLD,
+        color: Colors.WHITE_DEFAULT,
+        fontSize: Typography.FONT_SIZE_18,
+    },
+    ambientAddress: {
+        ...Typography.FONT_REGULAR,
+        fontSize: Typography.FONT_SIZE_14,
+        color: Colors.rgba(Colors.WHITE_DEFAULT, 0.8)
     }
 });
 

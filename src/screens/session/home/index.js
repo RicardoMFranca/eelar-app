@@ -1,17 +1,14 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Image, ScrollView, StatusBar, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Image, ScrollView, StatusBar, Text, TextInput, 
+  TouchableOpacity, View, SafeAreaView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import SafeAreaView from 'react-native-safe-area-view';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import { StorageService } from '../../../services';
 import { Colors, GeneralStyles, Mixins } from '../../../styles';
 import Style from './style';
 
 import LoaderContext from '../../../contexts/loader';
 
-import CustomHeader from '../../../components/custom/custom-header';
-import DefaultList from '../../../components/lists/default-list';
 import CategoryCard from '../../../components/category-card';
 import AmbientCard from '../../../components/ambient-card';
 

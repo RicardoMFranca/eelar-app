@@ -1,16 +1,13 @@
 import React from 'react';
 import Style from './style';
-import { Text, View, TouchableOpacity, TextInput, Image } from 'react-native';
-import { Colors } from '../../styles';
-import CustomIcon from '../../util/icon-font';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { Text, TouchableOpacity, Image } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 export default function AmbientCard(props){
   const { ambient } = props;
   
   return (
-    <View style={Style.ambientCard}>
+    <TouchableOpacity style={Style.ambientCard}>
       <Image source={require('../../assets/images/temp/parque-da-cidade.png')} style={Style.ambientThumbNail}/>
       {/* <Image source={{uri: ambient?.foto_principal}} /> */}
       <LinearGradient
@@ -19,8 +16,9 @@ export default function AmbientCard(props){
         colors={['rgba(0, 0, 0, 0)', '#000']}
         style={Style.ambientInfoGradient}
       >
-        <Text>{ambient?.nome}</Text>
+        <Text style={Style.ambientName}>{ambient?.nome}</Text>
+        <Text style={Style.ambientAddress}>{ambient?.endereco}</Text>
       </LinearGradient>
-    </View>
+    </TouchableOpacity>
   );
 }
