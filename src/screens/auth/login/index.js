@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import Style from './style';
 import { View, Text, SafeAreaView, TouchableWithoutFeedback, 
-  Keyboard, 
+  Keyboard, ScrollView,
   Image,
   TouchableOpacity} from 'react-native';
 // import Toast from 'react-native-toast-message';
@@ -44,22 +44,34 @@ export default function LoginScreen(props){
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}> 
-      <View style={{flex: 1}}>
+      <ScrollView 
+        style={{flex: 1}}
+        contentContainerStyle={{flexGrow: 1}}
+        showsVerticalScrollIndicator={false}
+      >
         <Image source={require('../../../assets/images/login-blob-1/login-blob-1.png')} style={Style.loginBlob1}/>
         <SafeAreaView style={Style.loginContainer}>
           <Text style={Style.loginTitle}>Login</Text>
-          <Image source={require('../../../assets/images/login-yoga/login-yoga.png')} style={Style.loginImg}/>
+          <Image 
+            source={require('../../../assets/images/login-yoga/login-yoga.png')} 
+            style={[Style.loginImg, Mixins.WINDOW_HEIGHT < 690 && {height: Mixins.scaleSize(216)} ]}
+            
+          />
           <View style={GeneralStyles.aligns.width40}>
             <DefaultInput 
-              label={""}
+              label={null}
               value={email}
               onChangeText={setEmail}
               placeholder={"E-mail"}
               leftIconName={"person"}
               keyboardType={"email-address"}
+              customStyle={{
+                marginTop: Mixins.scaleSize(48)
+              }}
+
+              placeholderTextColor={Colors.rgba(Colors.BLACK_DEFAULT, 0.4)}
             />
             <DefaultInput 
-              label={""}
               value={password}
               onChangeText={setPassword}
               placeholder={"Senha"}
@@ -67,6 +79,8 @@ export default function LoginScreen(props){
               secureTextEntry={!show_password}
               rightBtnAction={() => setShowPassword(!show_password)}
               rightBtnIconName={show_password ? "visibility-off" : "visibility"}
+              customStyle={{marginTop: Mixins.scaleSize(24)}}
+              placeholderTextColor={Colors.rgba(Colors.BLACK_DEFAULT, 0.4)}
             />
 
             <DefaultBtn 
@@ -87,7 +101,7 @@ export default function LoginScreen(props){
           </View>
         </SafeAreaView>
         <Image source={require('../../../assets/images/login-blob-2/login-blob-2.png')} style={Style.loginBlob2}/>
-      </View>
+      </ScrollView>
     </TouchableWithoutFeedback>
   );
 }

@@ -8,7 +8,7 @@ const Style = StyleSheet.create({
 	defaultInputLeftIcon: {
 		position: 'absolute',
 		top: Mixins.scaleSize(12),
-		left: Mixins.scaleSize(8),
+		left: Mixins.scaleSize(12),
 		zIndex: 2
 	},
 	defaultInputAlignLabel: (isFocused) => ({
@@ -32,7 +32,7 @@ const Style = StyleSheet.create({
 		paddingRight: Mixins.scaleSize(16),
 		alignSelf: 'center',
 		color: Colors.GRAY_DARK,
-		paddingLeft: leftIconName ? Mixins.scaleSize(40) : Mixins.scaleSize(16),
+		paddingLeft: leftIconName ? Mixins.scaleSize(48) : Mixins.scaleSize(16),
 		borderColor: editable != false ? (isFocused ? Colors.PRIMARY : Colors.GRAY_MEDIUM) : Colors.GRAY_LIGHT,
 		backgroundColor: editable != false ? (isFocused ? Colors.rgba(Colors.PRIMARY, 0.08) : 'transparent') : Colors.GRAY_LIGHT
 		// editable != false existe para poder aceitar false e null

@@ -10,12 +10,14 @@ export default function DefaultInput(props){
   const { label, value, onChangeText, errorLabel, 
     customStyle, customType, customOptions,
     leftIconName, rightBtnAction, rightBtnIconName, 
-    secureTextEntry, autoCapitalize, placeholder, keyboardType, editable } = props;
+    secureTextEntry, autoCapitalize, placeholder, keyboardType, editable, 
+    customInputStyle, placeholderTextColor } = props;
 
   const [ isFocused, setIsFocused ] = useState(false);
   const [ isValid, setIsValid ] = useState(true);
 
   const label_container = ( 
+    label &&
     <Text 
       style={[
         GeneralStyles.forms.label, 
@@ -35,7 +37,7 @@ export default function DefaultInput(props){
       <Icon 
         name={rightBtnIconName}  
         size={Mixins.scaleSize(24)} 
-        color={isFocused ? Colors.BRAND_COLOR_DARK : Colors.GRAY_MEDIUM} 
+        color={Colors.PRIMARY} 
       /> 
     </TouchableOpacity>
   );
@@ -52,7 +54,7 @@ export default function DefaultInput(props){
           <Icon 
             name={leftIconName}  
             size={Mixins.scaleSize(24)} 
-            color={isFocused ? Colors.BRAND_COLOR_DARK : Colors.GRAY_MEDIUM} 
+            color={Colors.PRIMARY} 
             style={Style.defaultInputLeftIcon}
           /> 
         : null}
@@ -64,11 +66,12 @@ export default function DefaultInput(props){
             onChangeText={(value) => onChangeText(value)}
             style={[
               Style.defaultInputContainer(isFocused, leftIconName, editable), 
+              customInputStyle
               // isValid ? null : {borderColor: Colors.ALERT_MEDIUM}
             ]}
             autoCapitalize={autoCapitalize || 'none'}
             placeholder={placeholder}
-            placeholderTextColor={Colors.GRAY_MEDIUM}
+            placeholderTextColor={placeholderTextColor ? placeholderTextColor : Colors.GRAY_MEDIUM}
             onFocus={() => setIsFocused(true)}
             onBlur={() => {
               setIsFocused(false);
@@ -84,11 +87,12 @@ export default function DefaultInput(props){
             keyboardType={keyboardType}
             style={[
               Style.defaultInputContainer(isFocused, leftIconName, editable), 
+              customInputStyle
               // isValid ? null : {borderColor: Colors.ALERT_MEDIUM}
             ]}
             autoCapitalize={autoCapitalize || 'none'}
             placeholder={placeholder}
-            placeholderTextColor={Colors.GRAY_MEDIUM}
+            placeholderTextColor={placeholderTextColor ? placeholderTextColor : Colors.GRAY_MEDIUM}
             onFocus={() => setIsFocused(true)}
             onBlur={() => {
               setIsFocused(false);

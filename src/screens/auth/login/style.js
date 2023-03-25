@@ -19,11 +19,14 @@ const Style = StyleSheet.create({
   },
   loginImg: {
     width: Mixins.WINDOW_WIDTH,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
   },
   registerBtn: {
     textAlign: 'center',
-    marginTop: Mixins.scaleSize(32)
+    marginTop: Mixins.scaleSize(32),
+    marginBottom: Mixins.scaleSize(64),
+    color: Colors.BLACK_DEFAULT,
+    fontSize: Typography.FONT_SIZE_12
   },
   registerBtnBold: {
     fontWeight: 'bold'
