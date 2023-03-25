@@ -15,10 +15,6 @@ function App(): JSX.Element {
 
   return (
     <SafeAreaProvider>
-      <StatusBar 
-        barStyle={'dark-content'} 
-        backgroundColor={Colors.WHITE}
-      />
       <MainNavigator />
     </SafeAreaProvider>
   );
