@@ -5,6 +5,7 @@ import SplashScreen from '../components/splash-screen';
 
 import InitialScreen from '../screens/auth/initial';
 import LoginScreen from '../screens/auth/login';
+import RegisterScreen from '../screens/auth/register';
 
 
 const Stack = createNativeStackNavigator();
@@ -36,6 +37,7 @@ export default function MainStack(){
     > 
       <Stack.Screen name="Initial" component={InitialScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Register" component={RegisterScreen} />
     </Stack.Navigator>
   );
 }
