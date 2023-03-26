@@ -23,7 +23,7 @@ const Style = StyleSheet.create({
         lineHeight: Mixins.scaleSize(21),
         maxWidth: Mixins.scaleSize(182),
         marginLeft: Mixins.scaleSize(8)
-    }
+    },
 });
 
 export default Style;

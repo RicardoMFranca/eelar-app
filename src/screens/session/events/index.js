@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Image, ScrollView, Text, View, SafeAreaView } from 'react-native';
+import { Image, ScrollView, Text, SafeAreaView, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import { GeneralStyles, Mixins } from '../../../styles';
@@ -63,7 +63,10 @@ export default function EventsScreen(props){
   }
 
   const selectedPlacesBanner = (
-    <View style={[GeneralStyles.aligns.width24]}>
+    <TouchableOpacity 
+      style={[GeneralStyles.aligns.width24]}
+      onPress={() => props.navigation.navigate('Home')}
+    >
       <LinearGradient
         start={{x: 0, y: 0}} end={{x: 0, y: 0.99}}
         locations={[0,0.99]}
@@ -73,7 +76,7 @@ export default function EventsScreen(props){
         <Image source={require('../../../assets/images/recommendation-banner/recommendation-banner.png')} style={Style.recommendationBannerImage}/>
         <Text style={Style.selectedPlacesTitle}>Clique aqui e veja todos os lugares que separamos para você</Text>
       </LinearGradient>
-    </View>
+    </TouchableOpacity>
   );
 
   return (
@@ -83,26 +86,10 @@ export default function EventsScreen(props){
     >
       <WavyHeader/>
       <SafeAreaView style={GeneralStyles.aligns.container}>
-        <Text style={[GeneralStyles.aligns.sessionTitle, GeneralStyles.fonts.title]}>Categorias</Text>
-        <ScrollView
-          style={GeneralStyles.aligns.defaultList}
-          contentContainerStyle={{paddingRight: 32}}
-          showsHorizontalScrollIndicator={false}
-          showsVerticalScrollIndicator={false}
-          horizontal
-        >
-          {categories.map((item) => (
-            <CategoryCard 
-              category={item}
-              key={'categoria-' + item.id}
-            />
-          ))}
-        </ScrollView>
-        {selectedPlacesBanner}
         <Text style={[GeneralStyles.aligns.sessionTitle, GeneralStyles.fonts.title]}>Próximos eventos</Text>
         <ScrollView
           style={GeneralStyles.aligns.defaultList}
-          contentContainerStyle={{paddingRight: 32, paddingBottom: Mixins.scaleSize(48)}}
+          contentContainerStyle={{paddingRight: 32}}
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
           horizontal
@@ -112,6 +99,24 @@ export default function EventsScreen(props){
               event={item}
               onPress={() => props.navigation.navigate('EventDetails')}
               key={'evento-' + item.id}
+            />
+          ))}
+        </ScrollView>
+
+        {selectedPlacesBanner}
+        <Text style={[GeneralStyles.aligns.sessionTitle, GeneralStyles.fonts.title]}>Categorias</Text>
+        <ScrollView
+          style={GeneralStyles.aligns.defaultList}
+          contentContainerStyle={{paddingRight: 32, paddingBottom: Mixins.scaleSize(48)}}
+          showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}
+          horizontal
+        >
+          {categories.map((item) => (
+            <CategoryCard 
+              category={item}
+              key={'categoria-' + item.id}
+              onPress={() => props.navigation.navigate("Category")}
             />
           ))}
         </ScrollView>

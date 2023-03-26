@@ -19,7 +19,7 @@ export default function MainStack(){
       const user = await StorageService.getUser();
       setUser(user);
       setStarting(false);
-    }, 500);
+    }, 1000);
   }, []);
 
   if (starting) {

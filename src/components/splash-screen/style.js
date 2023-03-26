@@ -3,7 +3,7 @@ import { Mixins, Colors } from '../../styles';
 
 const Style = StyleSheet.create({
   container:{
-    backgroundColor: Colors.PRIMARY,
+    backgroundColor: Colors.WHITE_DEFAULT,
     height: Mixins.WINDOW_HEIGHT,
     justifyContent: 'center',
     alignItems: 'center'

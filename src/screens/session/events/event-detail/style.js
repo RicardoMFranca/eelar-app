@@ -80,12 +80,6 @@ const Style = StyleSheet.create({
         justifyContent: 'center',
         paddingHorizontal: Mixins.scaleSize(24)
     },
-    goBackBtn: {
-        position: 'absolute',
-        top: Mixins.scaleSize(48),
-        zIndex: 3,
-        left: Mixins.scaleSize(24)
-    }
 });
 
 export default Style;

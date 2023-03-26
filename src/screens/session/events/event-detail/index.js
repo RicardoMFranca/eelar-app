@@ -9,6 +9,7 @@ import Style from './style';
 import LoaderContext from '../../../../contexts/loader';
 import { handleEventDate } from '../../../../util/helpers';
 import DefaultBtn from '../../../../components/buttons/default-btn';
+import GobackBtn from '../../../../components/go-back-btn';
 
 export default function EventDetailScreen(props){
   const { setLoading } = useContext(LoaderContext);
@@ -20,12 +21,9 @@ export default function EventDetailScreen(props){
         showsVerticalScrollIndicator={false}
       >
         <View style={Style.thumbnailContainer}>
-          <TouchableOpacity
-            style={Style.goBackBtn}
-            onPress={() => props.navigation.goBack()}
-          >
-            <Image source={require('../../../../assets/images/go-back-btn/go-back-btn.png')} style={Style.backIcon}/>
-          </TouchableOpacity>
+          <GobackBtn
+            {...props}
+          />
           <View style={Style.linearGradientContainer}>
             <LinearGradient
               start={{x: 0, y: 0}} end={{x: 0, y: 1.0}}
