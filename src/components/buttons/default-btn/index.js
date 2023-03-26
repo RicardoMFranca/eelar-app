@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
-import { Icon } from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import { Colors, Mixins } from '../../../styles';
 import Style from './style';
@@ -36,7 +36,7 @@ export default function DefaultBtn(props){
         <Icon 
           style={Style.iconRight} 
           name={rightIcon} 
-          size={Mixins.scaleSize(30)} 
+          size={Mixins.scaleSize(16)} 
           color={rightIconColor || Colors.WHITE_DEFAULT} 
         />
       }

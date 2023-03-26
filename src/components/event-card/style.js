@@ -49,17 +49,6 @@ const Style = StyleSheet.create({
         fontSize: Typography.FONT_SIZE_14,
         color: Colors.WHITE_DEFAULT
     },
-    eventMonth: {
-        ...Typography.FONT_REGULAR,
-        fontSize: Typography.FONT_SIZE_10,
-        color: Colors.rgba(Colors.BLACK_DEFAULT, 0.8),
-    },
-    eventDay: {
-        ...Typography.FONT_BOLD,
-        fontSize: Typography.FONT_SIZE_14,
-        color: Colors.BLACK_DEFAULT,
-        lineHeight: Mixins.scaleSize(14)
-    }
 });
 
 export default Style;

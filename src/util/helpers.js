@@ -97,3 +97,11 @@ export const removeHTML = (value) => {
 export const removeAccents = (value) => {
   return String(value).normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
+
+export const handleEventDate = (date) => {
+  const typesOfDate = {
+    'day': '15',
+    'month': 'NOV'
+  };
+  return typesOfDate[date];
+};

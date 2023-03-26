@@ -75,7 +75,7 @@ export default function HomeScreen(props){
           <Text style={[Style.eventCardTitle]}>Veja todos os{'\n'}eventos disponíveis!</Text>
           <TouchableOpacity 
             style={Style.eventCardBtn}
-            onPress={() => props.navigation.navigate("Events")}
+            onPress={() => props.navigation.navigate("EventsStack")}
           >
             <Text style={Style.eventCardBtnLabel}>Ver todos</Text>
           </TouchableOpacity>

@@ -14,7 +14,7 @@ export default function HomeStack(){
       }}
     > 
       <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Events" component={EventsStack} />
+      <Stack.Screen name="EventsStack" component={EventsStack} />
     </Stack.Navigator>
   );
 }

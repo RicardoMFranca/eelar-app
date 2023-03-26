@@ -11,8 +11,11 @@ const Style = StyleSheet.create({
   },
   text: {
     ...Typography.FONT_SEMI_BOLD,
-    fontSize: Typography.FONT_SIZE_15,
+    fontSize: Typography.FONT_SIZE_16,
     lineHeight: Mixins.scaleSize(25),
+  },
+  iconRight: {
+    marginLeft: Mixins.scaleSize(4)
   }
 });
 

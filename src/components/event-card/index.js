@@ -3,23 +3,21 @@ import Style from './style';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-export default function EventCard(props){
-  const { event } = props;
+import { handleEventDate } from '../../util/helpers';
+import { GeneralStyles } from '../../styles';
 
-  const handleDate = (date) => {
-    const typesOfDate = {
-      'day': '15',
-      'month': 'NOV'
-    };
-    return typesOfDate[date];
-  }
+export default function EventCard(props){
+  const { event, onPress } = props;
 
   return (
-    <TouchableOpacity style={Style.eventCard}>
+    <TouchableOpacity 
+      style={Style.eventCard}
+      onPress={onPress}
+    >
       <Image source={require('../../assets/images/temp/kid-abelha.png')} style={Style.eventThumbnail}/>
       <View style={Style.eventDate}>
-        <Text style={Style.eventMonth}>{handleDate('month')}</Text>
-        <Text style={Style.eventDay}>{handleDate('day')}</Text>
+        <Text style={GeneralStyles.fonts.eventMonth}>{handleEventDate('month')}</Text>
+        <Text style={GeneralStyles.fonts.eventDay}>{handleEventDate('day')}</Text>
       </View>
       <LinearGradient
         start={{x: 0, y: 0}} end={{x: 0, y: 1.0}}
