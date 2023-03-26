@@ -1,20 +1,18 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import HomeScreen from '../screens/session/home';
-import EventsStack from './events';
+import EventsScreen from '../screens/session/events';
 
 const Stack = createStackNavigator();
 
-export default function HomeStack(){
+export default function EventsStack(){
   return (
     <Stack.Navigator
       screenOptions={{
         headerShown: false
       }}
     > 
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Events" component={EventsStack} />
+      <Stack.Screen name="Events" component={EventsScreen} />
     </Stack.Navigator>
   );
 }

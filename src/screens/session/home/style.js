@@ -2,17 +2,6 @@ import { StyleSheet } from 'react-native';
 import { Colors, Mixins, Typography } from '../../../styles';
 
 const Style = StyleSheet.create({
-    homeTitle: {
-        textAlign: 'left',
-        paddingLeft: Mixins.scaleSize(24),
-        marginTop: Mixins.scaleSize(32),
-        marginBottom: Mixins.scaleSize(16),
-    },
-    homeList: {
-        paddingHorizontal: Mixins.scaleSize(24),
-        flex: 0,
-        flexGrow: 0,
-    },
     selectedPlaces: {
         width: '100%',
     },

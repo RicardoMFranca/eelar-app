@@ -75,6 +75,7 @@ export default function HomeScreen(props){
           <Text style={[Style.eventCardTitle]}>Veja todos os{'\n'}eventos disponíveis!</Text>
           <TouchableOpacity 
             style={Style.eventCardBtn}
+            onPress={() => props.navigation.navigate("Events")}
           >
             <Text style={Style.eventCardBtnLabel}>Ver todos</Text>
           </TouchableOpacity>
@@ -91,23 +92,26 @@ export default function HomeScreen(props){
     >
       <WavyHeader/>
       <SafeAreaView style={GeneralStyles.aligns.container}>
-        <Text style={[Style.homeTitle, GeneralStyles.fonts.title]}>Categorias</Text>
+        <Text style={[GeneralStyles.aligns.sessionTitle, GeneralStyles.fonts.title]}>Categorias</Text>
         <ScrollView
-          style={Style.homeList}
+          style={GeneralStyles.aligns.defaultList}
           contentContainerStyle={{paddingRight: 32}}
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
           horizontal
         >
           {categories.map((item) => (
-            <CategoryCard category={item}/>
+            <CategoryCard 
+              category={item}
+              key={'categoria-' + item.id}
+            />
           ))}
         </ScrollView>
         <View style={Style.selectedPlaces}>
-          <Text style={[Style.homeTitle, GeneralStyles.fonts.title]}>Espaços próximos de você</Text>
+          <Text style={[GeneralStyles.aligns.sessionTitle, GeneralStyles.fonts.title]}>Espaços próximos de você</Text>
         </View>
         <ScrollView 
-          style={Style.homeList}
+          style={GeneralStyles.aligns.defaultList}
           contentContainerStyle={{paddingRight: 32}}
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}

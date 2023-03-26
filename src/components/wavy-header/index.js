@@ -11,6 +11,8 @@ export default function WavyHeader(props){
     <View style={Style.wavyHeader}>
       <StatusBar 
         barStyle="light-content" 
+        backgroundColor={'transparent'}
+        translucent
       />
       <Image source={require('../../assets/images/wave-background/wave-background.png')} style={Style.waveBackground}/>
       <View style={Style.headerContiner}>

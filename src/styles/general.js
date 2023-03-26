@@ -19,28 +19,21 @@ export const aligns = StyleSheet.create({
     width24: {
         width: Mixins.WINDOW_WIDTH - Mixins.scaleSize(48)
     },
-    topCenter: {
-        position: 'absolute',
-        bottom: '70%',
-        width: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
     bottom: {
         flex: 1,
         justifyContent: 'flex-end',
         alignItems: 'center',
     },
-    header: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        width: '90%',
-        marginTop: Mixins.scaleSize(50)
+    defaultList: {
+        paddingHorizontal: Mixins.scaleSize(24),
+        flex: 0,
+        flexGrow: 0,
     },
-    content: {
-        marginTop: Mixins.scaleSize(10),
-        width: '90%',
+    sessionTitle: {
+        textAlign: 'left',
+        paddingLeft: Mixins.scaleSize(24),
+        marginTop: Mixins.scaleSize(32),
+        marginBottom: Mixins.scaleSize(16),
     }
 });
 
@@ -64,7 +57,7 @@ export const forms = StyleSheet.create({
         borderWidth: Mixins.scaleSize(1),
         borderColor: Colors.BLACK_TONE_1,
         borderRadius: Mixins.scaleSize(8)
-    },
+    }
 }); 
 
 export const fonts = StyleSheet.create({

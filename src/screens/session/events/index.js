@@ -1,24 +1,22 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Image, ScrollView, StatusBar, Text, TextInput, 
-  TouchableOpacity, View, SafeAreaView } from 'react-native';
+import { Image, ScrollView, Text, View, SafeAreaView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import { Colors, GeneralStyles, Mixins } from '../../../styles';
+import { GeneralStyles, Mixins } from '../../../styles';
 import Style from './style';
 
 import LoaderContext from '../../../contexts/loader';
 
 import CategoryCard from '../../../components/category-card';
-import AmbientCard from '../../../components/ambient-card';
 import WavyHeader from '../../../components/wavy-header';
+import EventCard from '../../../components/event-card';
 
 export default function EventsScreen(props){
   const { setLoading } = useContext(LoaderContext);
 
   const [refreshing, setRefreshing] = useState(false);
   const [categories, setCategories] = useState([]);
-  const [ambients, setAmbients] = useState([]);
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -55,57 +53,25 @@ export default function EventsScreen(props){
     ];
     setCategories(categories);
 
-    const ambients = [
-      {id: 1, nome: "Parque da cidade", endereco: 'Estr. da Viração - São Francisco', foto_principal: '../../assets/images/temp/parque-da-cidade.png'},
-      {id: 2, nome: "Parque da cidade", endereco: 'Estr. da Viração - São Francisco', foto_principal: '../../assets/images/temp/parque-da-cidade.png'},
-      {id: 3, nome: "Parque da cidade", endereco: 'Estr. da Viração - São Francisco', foto_principal: '../../assets/images/temp/parque-da-cidade.png'},
-      {id: 4, nome: "Parque da cidade", endereco: 'Estr. da Viração - São Francisco', foto_principal: '../../assets/images/temp/parque-da-cidade.png'},
+    const events = [
+      {id: 1, nome: "Parque da cidade", categoria: 'SHOW'},
+      {id: 2, nome: "Parque da cidade", categoria: 'SHOW'},
+      {id: 3, nome: "Parque da cidade", categoria: 'SHOW'},
+      {id: 4, nome: "Parque da cidade", categoria: 'SHOW'},
     ];
-    setAmbients(ambients);
+    setEvents(events);
   }
 
-  const header = (
-    <View style={Style.wavyHeader}>
-      <StatusBar 
-        barStyle="light-content" 
-      />
-      <Image source={require('../../../assets/images/wave-background/wave-background.png')} style={Style.waveBackground}/>
-      <View style={Style.headerContiner}>
-        <Text style={Style.headerTitle}>Aqui um texto de no máximo duas linhas</Text>
-        <View style={Style.searchBarContainer}>
-          <TextInput 
-            style={Style.searchBar}
-            placeholder="Que lugar você quer conhecer hoje?"
-          />
-          <TouchableOpacity style={Style.searchBtn}>
-            <Icon 
-              name={'search'} 
-              size={Mixins.scaleSize(20)} 
-              color={Colors.WHITE_DEFAULT } 
-            />
-          </TouchableOpacity>
-        </View>
-      </View>
-    </View>
-  );
-
-  const availableEvents = (
-    <View style={GeneralStyles.aligns.width24}>
+  const selectedPlacesBanner = (
+    <View style={[GeneralStyles.aligns.width24]}>
       <LinearGradient
-        start={{x: 0, y: 0.6}} end={{x: 0, y: 1.0}}
+        start={{x: 0, y: 0}} end={{x: 0, y: 0.99}}
         locations={[0,0.99]}
-        colors={['#407BFF', '#9EBCFF']}
-        style={Style.availableEventsContainer}
+        colors={['rgba(64, 123, 255, 0.8)', '#9EBCFF']}
+        style={Style.recommendationBanner}
       >
-        <View>
-          <Text style={[Style.eventCardTitle]}>Veja todos os{'\n'}eventos disponíveis!</Text>
-          <TouchableOpacity 
-            style={Style.eventCardBtn}
-          >
-            <Text style={Style.eventCardBtnLabel}>Ver todos</Text>
-          </TouchableOpacity>
-        </View>
-        <Image source={require('../../../assets/images/events-image/events-image.png')} style={Style.eventsImage}/>
+        <Image source={require('../../../assets/images/recommendation-banner/recommendation-banner.png')} style={Style.recommendationBannerImage}/>
+        <Text style={Style.selectedPlacesTitle}>Clique aqui e veja todos os lugares que separamos para você</Text>
       </LinearGradient>
     </View>
   );
@@ -117,33 +83,37 @@ export default function EventsScreen(props){
     >
       <WavyHeader/>
       <SafeAreaView style={GeneralStyles.aligns.container}>
-        <Text style={[Style.homeTitle, GeneralStyles.fonts.title]}>Categorias</Text>
+        <Text style={[GeneralStyles.aligns.sessionTitle, GeneralStyles.fonts.title]}>Categorias</Text>
         <ScrollView
-          style={Style.homeList}
+          style={GeneralStyles.aligns.defaultList}
           contentContainerStyle={{paddingRight: 32}}
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
           horizontal
         >
           {categories.map((item) => (
-            <CategoryCard category={item}/>
+            <CategoryCard 
+              category={item}
+              key={'categoria-' + item.id}
+            />
           ))}
         </ScrollView>
-        <View style={Style.selectedPlaces}>
-          <Text style={[Style.homeTitle, GeneralStyles.fonts.title]}>Espaços próximos de você</Text>
-        </View>
-        <ScrollView 
-          style={Style.homeList}
-          contentContainerStyle={{paddingRight: 32}}
+        {selectedPlacesBanner}
+        <Text style={[GeneralStyles.aligns.sessionTitle, GeneralStyles.fonts.title]}>Próximos eventos</Text>
+        <ScrollView
+          style={GeneralStyles.aligns.defaultList}
+          contentContainerStyle={{paddingRight: 32, paddingBottom: Mixins.scaleSize(48)}}
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
           horizontal
         >
-          {ambients.map((item) => (
-            <AmbientCard ambient={item}/>
+          {events.map((item) => (
+            <EventCard
+              event={item}
+              key={'evento-' + item.id}
+            />
           ))}
         </ScrollView>
-        {availableEvents}
       </SafeAreaView>
     </ScrollView>
   );
