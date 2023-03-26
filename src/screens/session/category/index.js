@@ -94,6 +94,7 @@ export default function CategoryScreen(props){
     <FlatList
       data={ambients}
       style={Style.listContainer}
+      contentContainerStyle={{paddingBottom: Mixins.scaleSize(56)}}
       showsHorizontalScrollIndicator={false}
       showsVerticalScrollIndicator={false}
       numColumns={2}
@@ -105,6 +106,7 @@ export default function CategoryScreen(props){
             ambient={item}
             key={'ambiente-' + item.id}
             customStyle={[Style.verticalListCard]}
+            cardHeight={Mixins.scaleSize(200)}
           />
         </View>
       )}

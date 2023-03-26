@@ -51,7 +51,7 @@ const Style = StyleSheet.create({
     },
     listContainer: {
         width: Mixins.WINDOW_WIDTH - Mixins.scaleSize(48),
-        paddingTop: Mixins.scaleSize(56),
+        paddingTop: Mixins.scaleSize(32),
     },
     ambientCardWrapper: {
         flex: 1,
@@ -67,7 +67,7 @@ const Style = StyleSheet.create({
     verticalListCard: {
         width: Mixins.WINDOW_WIDTH/2 - Mixins.scaleSize(32),
         marginRight: 0,
-        marginBottom: Mixins.scaleSize(24),
+        marginTop: Mixins.scaleSize(24),
     },
     nearbyEventsCard: {
         height: Mixins.scaleSize(100),
@@ -77,11 +77,11 @@ const Style = StyleSheet.create({
         borderRadius: Mixins.scaleSize(12),
         justifyContent: 'center',
         paddingLeft: Mixins.scaleSize(10),
-        marginBottom: Mixins.scaleSize(24),
         zIndex: 4
     },
     nearbyEventsCardContainer: {
         position: 'relative',
+        marginTop: Mixins.scaleSize(24),
     },
     nearbyEventsTitle: {
         ...Typography.FONT_BOLD,
