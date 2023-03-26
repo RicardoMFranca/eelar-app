@@ -4,7 +4,8 @@ import { Mixins, Colors } from '../../styles';
 const Style = StyleSheet.create({
   container:{
     backgroundColor: Colors.WHITE_DEFAULT,
-    height: Mixins.WINDOW_HEIGHT,
+    height: '100%',
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
   }

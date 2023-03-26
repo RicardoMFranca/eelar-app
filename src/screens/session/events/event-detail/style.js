@@ -33,7 +33,7 @@ const Style = StyleSheet.create({
     eventInfoContainer: {
         backgroundColor: Colors.BLACK_DEFAULT,
         paddingHorizontal: Mixins.scaleSize(24),
-        flex: 1
+        flexGrow: 1,
     },
     linearGradientContainer: {
         position: 'absolute',

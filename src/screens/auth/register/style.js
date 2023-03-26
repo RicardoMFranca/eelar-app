@@ -5,14 +5,15 @@ const Style = StyleSheet.create({
 
     registerContainer: {
         flex: 1,
-        alignItems: 'center'
+        alignItems: 'center',
+        height: '100%',
     },
     registerTitle: {
         ...Typography.FONT_REGULAR,
         fontSize: Typography.FONT_SIZE_15,
         color: Colors.BLACK_DEFAULT,
         width: '100%',
-        marginVertical: Mixins.scaleSize(24),
+        marginTop: Mixins.scaleSize(56),
         textAlign: 'center'
     },
     registerImg: {

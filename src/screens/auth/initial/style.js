@@ -18,7 +18,8 @@ const Style = StyleSheet.create({
     marginHorizontal: 'auto'
   },
   initialBackground: {
-    height: Mixins.WINDOW_HEIGHT,
+    height: '100%',
+    flex: 1,
     width: Mixins.WINDOW_WIDTH,
     position:'absolute',
     top: 0,

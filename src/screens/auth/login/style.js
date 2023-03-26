@@ -15,6 +15,7 @@ const Style = StyleSheet.create({
     color: Colors.BLACK_DEFAULT,
     width: '100%',
     marginVertical: Mixins.scaleSize(24),
+    marginTop: Mixins.scaleSize(56),
     textAlign: 'center'
   },
   loginImg: {

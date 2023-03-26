@@ -15,7 +15,7 @@ export default function InitialScreen(props){
         backgroundColor={'transparent'}
         translucent={true}
       />
-      <SafeAreaView style={GeneralStyles.aligns.container}>
+      <SafeAreaView style={[GeneralStyles.aligns.container, {backgroundColor: 'yellow'}]}>
         <Image source={require('../../../assets/images/initial-background/initial-background.png')} style={Style.initialBackground}/>
         <Image source={require('../../../assets/images/initial-training-img/initial-training-img.png')} style={Style.initialImg}/>
         <View style={GeneralStyles.aligns.container}>
@@ -30,7 +30,7 @@ export default function InitialScreen(props){
             <DefaultBtn 
               onPress={() => props.navigation.navigate("Register")}
               label='Cadastrar'
-              customStyle={{marginBottom: Mixins.scaleSize(10), backgroundColor: Colors.WHITE_DEFAULT}}
+              customStyle={{marginBottom: Mixins.scaleSize(24), backgroundColor: Colors.WHITE_DEFAULT}}
               textColor={Colors.BLACK_TONE_1}
             />
           </View>

@@ -19,6 +19,7 @@ export default function EventDetailScreen(props){
       <ScrollView
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
+        contentContainerStyle={{flexGrow: 1}}
       >
         <View style={Style.thumbnailContainer}>
           <GobackBtn
