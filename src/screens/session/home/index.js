@@ -122,6 +122,7 @@ export default function HomeScreen(props){
             <AmbientCard 
               ambient={item}
               key={'ambiente-' + item.id}
+              onPress={() => props.navigation.navigate('AmbientDetail', {ambient: item})}
             />
           ))}
         </ScrollView>

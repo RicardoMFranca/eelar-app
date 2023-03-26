@@ -4,12 +4,12 @@ import { Text, TouchableOpacity, Image } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 export default function AmbientCard(props){
-  const { ambient, cardHeight, customStyle } = props;
+  const { ambient, cardHeight, customStyle, onPress } = props;
   
   return (
     <TouchableOpacity 
       style={[Style.ambientCard, customStyle, cardHeight && {height: cardHeight}]}
-      onPress={() => props.navigation.navigate('Ambient', {ambient: ambient})}
+      onPress={onPress}
     >
       <Image source={require('../../assets/images/temp/parque-da-cidade.png')} style={[Style.ambientThumbNail, cardHeight && {height: cardHeight}]}/>
       {/* <Image source={{uri: ambient?.foto_principal}} /> */}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Image, ScrollView, Text, View, SafeAreaView, FlatList } from 'react-native';
+import { Image, ScrollView, Text, View, SafeAreaView, FlatList, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import { GeneralStyles, Mixins } from '../../../styles';
@@ -74,14 +74,17 @@ export default function CategoryScreen(props){
   );
 
   const nearbyEventsCard = (
-    <View style={Style.nearbyEventsCardContainer}>
+    <TouchableOpacity 
+      style={Style.nearbyEventsCardContainer}
+      onPress={() => props.navigation.navigate('EventsStack')}
+    >
       <View style={Style.nearbyEventsCard}>
         <Text style={Style.nearbyEventsTitle}>Eventos Próximos</Text>
         <Text style={Style.nearbyEventsSubtitle}>Clique aqui para ver  eventos próximos de você.</Text>
       </View>
       <View style={Style.backgroundSquare(false)}/>
       <View style={Style.backgroundSquare(true)}/>
-    </View>
+    </TouchableOpacity>
   );
 
   const handleAmbientCardStyles = (index) => {
@@ -107,6 +110,7 @@ export default function CategoryScreen(props){
             key={'ambiente-' + item.id}
             customStyle={[Style.verticalListCard]}
             cardHeight={Mixins.scaleSize(200)}
+            onPress={() => props.navigation.navigate('AmbientDetail', {ambient: item})}
           />
         </View>
       )}

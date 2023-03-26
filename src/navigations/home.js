@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../screens/session/home';
 import EventsStack from './events';
 import CategoryScreen from '../screens/session/category';
-import AmbientDetailScreen from '../screens/session/ambient';
+import AmbientDetailScreen from '../screens/session/ambient-detail';
 
 const Stack = createStackNavigator();
 
