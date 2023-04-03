@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Image, ScrollView, Text, View } from 'react-native';
 import Animated, { Extrapolate, interpolate, useAnimatedStyle, useSharedValue } from "react-native-reanimated";
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -11,7 +11,7 @@ import DefaultBtn from '../../../components/buttons/default-btn';
 import GobackBtn from '../../../components/go-back-btn';
 
 export default function AmbientDetailScreen(props){
-
+  const [ambient, setAmbient] = useState({});
   const progressValue = useSharedValue(0);
 
   const animationStyle = React.useCallback(
@@ -31,15 +31,11 @@ export default function AmbientDetailScreen(props){
     [],
   );
 
-  const colors = [
-    "#26292E",
-    "#899F9C",
-    "#B3C680",
-    "#5C6265",
-    "#F5D399",
-    "#F1F1F1",
-  ];
-
+  useEffect(() => {
+    const ambient = props?.route?.params?.ambient;
+    setAmbient(ambient);
+  }, [])
+  
   const PaginationItem = (props) => {
     const { animValue, index, length, backgroundColor, isRotate } = props;
     const width = 10;
@@ -97,22 +93,22 @@ export default function AmbientDetailScreen(props){
         onProgressChange={(_, absoluteProgress) =>
           (progressValue.value = absoluteProgress)
         }
-        data={[...new Array(6).keys()]}
+        data={ambient?.fotos}
         scrollAnimationDuration={600}
-        onSnapToItem={(index) => console.log('current index:', index)}
-        renderItem={({ index }) => (
-          <Image source={require('../../../assets/images/temp/parque-da-cidade-horizontal.png')} style={Style.carouselImage} />
+        // onSnapToItem={(index) => console.log('current index:', index)}
+        renderItem={({ item, index }) => (
+          <Image source={item} style={Style.carouselImage} />
         )}
       />
       <View style={Style.dotsContainer}>
-        {colors.map((backgroundColor, index) => {
+        {ambient?.fotos?.map((backgroundColor, index) => {
           return (
             <PaginationItem
               backgroundColor={Colors.PRIMARY}
               animValue={progressValue}
               index={index}
               key={index}
-              length={colors.length}
+              length={ambient?.fotos?.length}
               isRotate={false}
             />
           );
@@ -151,12 +147,12 @@ export default function AmbientDetailScreen(props){
         {carousel}
         <View style={Style.ambientInfoContainer}>
           <View style={Style.nameCategoryAlign}>
-            <Text style={Style.ambientName}>Parque da cidade</Text>
+            <Text style={Style.ambientName}>{ambient?.nome}</Text>
             <View style={Style.category}>
               <Text style={Style.categoryLabel}>Parque</Text>
             </View>
           </View>
-          <Text style={Style.ambientAddress}>Estr. da Viração - São Francisco</Text>
+          <Text style={Style.ambientAddress}>{ambient?.endereco}</Text>
           <Text style={Style.ambientDescription}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </Text>
           <Text style={[GeneralStyles.fonts.title, Style.titleSpacing]}>Informações do Local</Text>
           {ambientInfoHorizontalCard()}

@@ -10,6 +10,7 @@ import LoaderContext from '../../../contexts/loader';
 import CategoryCard from '../../../components/category-card';
 import WavyHeader from '../../../components/wavy-header';
 import EventCard from '../../../components/event-card';
+import { staticEvents } from '../../../util/static-data';
 
 export default function EventsScreen(props){
   const { setLoading } = useContext(LoaderContext);
@@ -29,19 +30,19 @@ export default function EventsScreen(props){
     setLoading(true);
     await getData();
     setLoading(false);
-  }
+  };
 
   const onReload = async () => {
     return props.navigation.addListener('focus', async () => {
       await onLoad();
     });
-  }
+  };
 
   const onRefresh = async () => {
     setRefreshing(true);
     await getData();
     setRefreshing(false);
-  }
+  };
 
   const getData = async () => {
 
@@ -53,14 +54,8 @@ export default function EventsScreen(props){
     ];
     setCategories(categories);
 
-    const events = [
-      {id: 1, nome: "Parque da cidade", categoria: 'SHOW'},
-      {id: 2, nome: "Parque da cidade", categoria: 'SHOW'},
-      {id: 3, nome: "Parque da cidade", categoria: 'SHOW'},
-      {id: 4, nome: "Parque da cidade", categoria: 'SHOW'},
-    ];
-    setEvents(events);
-  }
+    setEvents(staticEvents);
+  };
 
   const selectedPlacesBanner = (
     <TouchableOpacity 

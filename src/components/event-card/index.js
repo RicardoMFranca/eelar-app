@@ -14,7 +14,7 @@ export default function EventCard(props){
       style={Style.eventCard}
       onPress={onPress}
     >
-      <Image source={require('../../assets/images/temp/kid-abelha.png')} style={Style.eventThumbnail}/>
+      <Image source={event?.foto_principal} style={Style.eventThumbnail}/>
       <View style={Style.eventDate}>
         <Text style={GeneralStyles.fonts.eventMonth}>{handleEventDate('month')}</Text>
         <Text style={GeneralStyles.fonts.eventDay}>{handleEventDate('day')}</Text>

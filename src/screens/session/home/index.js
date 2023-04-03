@@ -2,8 +2,9 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Image, ScrollView, Text, 
   TouchableOpacity, View, SafeAreaView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import {staticAmbients} from '../../../util/static-data';
 
-import { Colors, GeneralStyles, Mixins } from '../../../styles';
+import { GeneralStyles } from '../../../styles';
 import Style from './style';
 
 import LoaderContext from '../../../contexts/loader';
@@ -47,22 +48,19 @@ export default function HomeScreen(props){
   const getData = async () => {
 
     const categories = [
+      {id: 3, nome: "Praça", iconName: 'nature-people'},
+      {id: 5, nome: "Campo", iconName: 'soccer-field'},
+      {id: 6, nome: "Skate Parque", iconName: 'skateboarding'},
+      {id: 7, nome: "Quadra", iconName: 'soccer-field'},
       {id: 1, nome: "Aulão", iconName: 'account-group'},
       {id: 2, nome: "Show", iconName: 'ticket'},
-      {id: 3, nome: "Praia", iconName: 'beach'},
       {id: 4, nome: "Teatro", iconName: 'theater'},
     ];
     setCategories(categories);
 
-    const ambients = [
-      {id: 1, nome: "Parque da cidade", endereco: 'Estr. da Viração - São Francisco', foto_principal: '../../assets/images/temp/parque-da-cidade.png'},
-      {id: 2, nome: "Parque da cidade", endereco: 'Estr. da Viração - São Francisco', foto_principal: '../../assets/images/temp/parque-da-cidade.png'},
-      {id: 3, nome: "Parque da cidade", endereco: 'Estr. da Viração - São Francisco', foto_principal: '../../assets/images/temp/parque-da-cidade.png'},
-      {id: 4, nome: "Parque da cidade", endereco: 'Estr. da Viração - São Francisco', foto_principal: '../../assets/images/temp/parque-da-cidade.png'},
-    ];
-    setAmbients(ambients);
+    setAmbients(staticAmbients);
   }
-
+  
   const availableEvents = (
     <View style={GeneralStyles.aligns.width24}>
       <LinearGradient
@@ -90,7 +88,9 @@ export default function HomeScreen(props){
       showsHorizontalScrollIndicator={false}
       showsVerticalScrollIndicator={false}
     >
-      <WavyHeader/>
+      <WavyHeader
+        {...props}
+      />
       <SafeAreaView style={GeneralStyles.aligns.container}>
         <Text style={[GeneralStyles.aligns.sessionTitle, GeneralStyles.fonts.title]}>Categorias</Text>
         <ScrollView

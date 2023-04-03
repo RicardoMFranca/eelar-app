@@ -12,6 +12,7 @@ import WavyHeader from '../../../components/wavy-header';
 import EventCard from '../../../components/event-card';
 import SearchBar from '../../../components/search-bar';
 import AmbientCard from '../../../components/ambient-card';
+import { staticAmbients } from '../../../util/static-data';
 
 export default function CategoryScreen(props){
   const { setLoading } = useContext(LoaderContext);
@@ -46,13 +47,7 @@ export default function CategoryScreen(props){
 
   const getData = async () => {
 
-    const ambients = [
-      {id: 1, nome: "Parque da cidade", endereco: 'Estr. da Viração - São Francisco', foto_principal: '../../assets/images/temp/parque-da-cidade.png'},
-      {id: 2, nome: "Parque da cidade", endereco: 'Estr. da Viração - São Francisco', foto_principal: '../../assets/images/temp/parque-da-cidade.png'},
-      {id: 3, nome: "Parque da cidade", endereco: 'Estr. da Viração - São Francisco', foto_principal: '../../assets/images/temp/parque-da-cidade.png'},
-      {id: 4, nome: "Parque da cidade", endereco: 'Estr. da Viração - São Francisco', foto_principal: '../../assets/images/temp/parque-da-cidade.png'},
-    ];
-    setAmbients(ambients);
+    setAmbients(staticAmbients);
   }
 
   const categoryHeader = (

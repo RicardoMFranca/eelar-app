@@ -20,7 +20,7 @@ const Style = StyleSheet.create({
     },
     ambientInfoGradient: {
         width: '100%',
-        height: Mixins.scaleSize(116),
+        height: Mixins.scaleSize(156),
         position: 'absolute',
         bottom: 0,
         zIndex: 2,

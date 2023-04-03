@@ -23,6 +23,7 @@ const Style = StyleSheet.create({
 	categoryName: {
 		...Typography.FONT_SEMI_BOLD,
 		color: Colors.WHITE_DEFAULT,
+        flex: 1
 	}
 });
 

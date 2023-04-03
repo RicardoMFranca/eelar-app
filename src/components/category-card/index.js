@@ -15,7 +15,7 @@ export default function CategoryCard(props){
       <View style={Style.categoryIconContainer}>
         <Icon name={category?.iconName} size={16} color={Colors.BLACK_DEFAULT} />
       </View>
-      <Text style={Style.categoryName}>{category.nome}</Text>
+      <Text style={Style.categoryName} numberOfLines={1}>{category.nome}</Text>
     </TouchableOpacity>
   );
 }

@@ -4,10 +4,9 @@ import { View, Text, SafeAreaView, TouchableWithoutFeedback,
   Keyboard, ScrollView,
   Image,
   TouchableOpacity} from 'react-native';
-// import Toast from 'react-native-toast-message';
 
-import { StorageService, RoutesService } from '../../../services';
-import { FormValidations, CustomAlerts } from '../../../util';
+import { StorageService } from '../../../services';
+import { resetRedirect } from '../../../util/helpers';
 import { GeneralStyles, Colors, Mixins } from '../../../styles';
 
 import LoaderContext from '../../../contexts/loader';
@@ -39,7 +38,7 @@ export default function LoginScreen(props){
   const loginTest = async (email, password) => { 
     const resp = {id: 1, nome: 'Teste', email, password, authentication_token: 'teste', tipo: 'normal'};
     await StorageService.setUser(resp);
-    props.navigation.navigate('Session');
+    resetRedirect(props, 0, 'Session');
   }
 
   return (

@@ -30,7 +30,7 @@ export default function MainStack(){
 
   return (
     <Stack.Navigator
-      initialRouteName={user ? "Auth" : "Auth"}
+      initialRouteName={user ? "Session" : "Auth"}
       screenOptions={{
         headerShown: false
       }}
