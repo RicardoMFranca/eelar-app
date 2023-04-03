@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import React, { useContext, useState, useEffect } from 'react';
+import { Image, ScrollView, Text, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -12,8 +12,13 @@ import DefaultBtn from '../../../../components/buttons/default-btn';
 import GobackBtn from '../../../../components/go-back-btn';
 
 export default function EventDetailScreen(props){
+  const [event, setEvent] = useState({})
   const { setLoading } = useContext(LoaderContext);
 
+  useEffect(() => {
+    setEvent(props.route.params.event)
+  }, [])
+  
   return (
     <>
       <ScrollView
@@ -33,14 +38,14 @@ export default function EventDetailScreen(props){
               style={Style.linearGradient}
             />
           </View>
-          <Image source={require('../../../../assets/images/temp/yoga-image.png')} style={Style.eventThumbnail}/>
+          <Image source={event?.foto_principal} style={Style.eventThumbnail}/>
         </View>
 
         <View style={Style.eventInfoContainer}>
           <View style={Style.eventInfoAlign}>
-            <View>
-              <Text style={Style.eventName}>Aulão de Yoga</Text>
-              <Text style={[Style.eventAddress, Style.regularFont]}>Estr. da Viração - São Francisco</Text>
+            <View style={Style.eventNameAddressContainer}>
+              <Text style={Style.eventName}>{event?.nome}</Text>
+              <Text style={[Style.eventAddress, Style.regularFont]}>{event?.endereco}</Text>
             </View>
             <View style={Style.eventDate}>
               <Text style={GeneralStyles.fonts.eventMonth}>{handleEventDate('month')}</Text>
@@ -54,9 +59,9 @@ export default function EventDetailScreen(props){
               color={Colors.WHITE_DEFAULT} 
               style={Style.clockAlign}
             /> 
-            <Text style={[Style.eventTime, Style.regularFont]}>09:00 - 11:00</Text>
+            <Text style={[Style.eventTime, Style.regularFont]}>{event?.horario}</Text>
           </View>
-          <Text style={[Style.eventDescription, Style.regularFont]}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. readable content of a page when looking at its layout. </Text>
+          <Text style={[Style.eventDescription, Style.regularFont]}>{event?.descricao}</Text>
         </View>
       </ScrollView>
       <View style={Style.mapsBtnContainer}>

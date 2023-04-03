@@ -92,7 +92,7 @@ export default function EventsScreen(props){
           {events.map((item) => (
             <EventCard
               event={item}
-              onPress={() => props.navigation.navigate('EventDetails')}
+              onPress={() => props.navigation.navigate('EventDetails', {event: item})}
               key={'evento-' + item.id}
             />
           ))}

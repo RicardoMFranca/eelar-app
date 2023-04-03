@@ -14,7 +14,10 @@ const Style = StyleSheet.create({
         zIndex: 3,
         justifyContent: 'center',
         alignItems: 'center',
-        marginLeft: Mixins.scaleSize(16)
+    },
+    eventNameAddressContainer: {
+        marginRight: Mixins.scaleSize(16),
+        flex: 1
     },
     eventInfoAlign: {
         flexDirection: 'row',
@@ -29,6 +32,8 @@ const Style = StyleSheet.create({
     thumbnailContainer:{
         flex: 1,
         position: 'relative',
+        maxHeight: Mixins.WINDOW_HEIGHT - Mixins.scaleSize(180),
+        minHeight: Mixins.WINDOW_HEIGHT - Mixins.scaleSize(180),
     },
     eventInfoContainer: {
         backgroundColor: Colors.BLACK_DEFAULT,
@@ -56,7 +61,8 @@ const Style = StyleSheet.create({
         fontSize: Typography.FONT_SIZE_14,
         marginTop: Mixins.scaleSize(16),
         marginBottom: Mixins.scaleSize(100),
-        lineHeight: Mixins.scaleSize(17)
+        lineHeight: Mixins.scaleSize(20),
+        textAlign: 'justify',
     },
     eventTime: {
         fontSize: Typography.FONT_SIZE_12,
