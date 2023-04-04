@@ -11,6 +11,7 @@ import CategoryCard from '../../../components/category-card';
 import WavyHeader from '../../../components/wavy-header';
 import EventCard from '../../../components/event-card';
 import { staticEvents } from '../../../util/static-data';
+import NotFound from '../../../components/not-found';
 
 export default function EventsScreen(props){
   const { setLoading } = useContext(LoaderContext);
@@ -18,6 +19,7 @@ export default function EventsScreen(props){
   const [refreshing, setRefreshing] = useState(false);
   const [categories, setCategories] = useState([]);
   const [events, setEvents] = useState([]);
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -55,6 +57,7 @@ export default function EventsScreen(props){
     setCategories(categories);
 
     setEvents(staticEvents);
+    setItems(staticEvents);
   };
 
   const selectedPlacesBanner = (
@@ -79,7 +82,11 @@ export default function EventsScreen(props){
       showsHorizontalScrollIndicator={false}
       showsVerticalScrollIndicator={false}
     >
-      <WavyHeader/>
+      <WavyHeader
+        {...props}
+        setSearchedItems={setItems}
+        data={events}
+      />
       <SafeAreaView style={GeneralStyles.aligns.container}>
         <Text style={[GeneralStyles.aligns.sessionTitle, GeneralStyles.fonts.title]}>Próximos eventos</Text>
         <ScrollView
@@ -89,13 +96,17 @@ export default function EventsScreen(props){
           showsVerticalScrollIndicator={false}
           horizontal
         >
-          {events.map((item) => (
-            <EventCard
-              event={item}
-              onPress={() => props.navigation.navigate('EventDetails', {event: item})}
-              key={'evento-' + item.id}
-            />
-          ))}
+          {items.length > 0 ? 
+            items.map((item) => (
+              <EventCard
+                event={item}
+                onPress={() => props.navigation.navigate('EventDetails', {event: item})}
+                key={'evento-' + item.id}
+              />
+            ))
+            :
+            <NotFound/>
+          }
         </ScrollView>
 
         {selectedPlacesBanner}

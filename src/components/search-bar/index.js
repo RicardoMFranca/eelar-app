@@ -5,13 +5,14 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { Colors, Mixins } from '../../styles';
 
 export default function SearchBar(props){
-  const { value, setValue } = props;
+  const { setValue } = props;
   
   return (
     <View style={Style.searchBarContainer}>
       <TextInput 
         style={Style.searchBar}
         placeholder="Que lugar você quer conhecer hoje?"
+        onChangeText={setValue}
       />
       <TouchableOpacity style={Style.searchBtn}>
         <Icon 

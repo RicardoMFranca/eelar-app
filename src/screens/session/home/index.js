@@ -12,13 +12,15 @@ import LoaderContext from '../../../contexts/loader';
 import CategoryCard from '../../../components/category-card';
 import AmbientCard from '../../../components/ambient-card';
 import WavyHeader from '../../../components/wavy-header';
+import NotFound from '../../../components/not-found';
 
 export default function HomeScreen(props){
   const { setLoading } = useContext(LoaderContext);
 
-  const [refreshing, setRefreshing] = useState(false);
   const [categories, setCategories] = useState([]);
   const [ambients, setAmbients] = useState([]);
+
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -38,13 +40,6 @@ export default function HomeScreen(props){
       await onLoad();
     });
   }
-
-  const onRefresh = async () => {
-    setRefreshing(true);
-    await getData();
-    setRefreshing(false);
-  }
-
   const getData = async () => {
 
     const categories = [
@@ -59,7 +54,8 @@ export default function HomeScreen(props){
     setCategories(categories);
 
     setAmbients(staticAmbients);
-  }
+    setItems(staticAmbients);
+  };
   
   const availableEvents = (
     <View style={GeneralStyles.aligns.width24}>
@@ -90,6 +86,8 @@ export default function HomeScreen(props){
     >
       <WavyHeader
         {...props}
+        setSearchedItems={setItems}
+        data={ambients}
       />
       <SafeAreaView style={GeneralStyles.aligns.container}>
         <Text style={[GeneralStyles.aligns.sessionTitle, GeneralStyles.fonts.title]}>Categorias</Text>
@@ -118,13 +116,18 @@ export default function HomeScreen(props){
           showsVerticalScrollIndicator={false}
           horizontal
         >
-          {ambients.map((item) => (
-            <AmbientCard 
-              ambient={item}
-              key={'ambiente-' + item.id}
-              onPress={() => props.navigation.navigate('AmbientDetail', {ambient: item})}
-            />
-          ))}
+          {
+            items.length > 0 ?
+              items.map((item) => (
+                <AmbientCard 
+                  ambient={item}
+                  key={'ambiente-' + item.id}
+                  onPress={() => props.navigation.navigate('AmbientDetail', {ambient: item})}
+                />
+              ))
+              :
+              <NotFound/>
+          }
         </ScrollView>
         {availableEvents}
       </SafeAreaView>

@@ -95,7 +95,6 @@ export default function AmbientDetailScreen(props){
         }
         data={ambient?.fotos}
         scrollAnimationDuration={600}
-        // onSnapToItem={(index) => console.log('current index:', index)}
         renderItem={({ item, index }) => (
           <Image source={item} style={Style.carouselImage} />
         )}

@@ -38,6 +38,9 @@ const Style = StyleSheet.create({
         ...Typography.FONT_MEDIUM,
         fontSize: Typography.FONT_SIZE_14,
         color: Colors.WHITE_DEFAULT,
+    },
+    notFoundImage: {
+        resizeMode: 'contain',
     }
 });
 
