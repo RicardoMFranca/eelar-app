@@ -32,7 +32,7 @@ const Style = StyleSheet.create({
     currentCategoryContainer: {
         maxWidth: Mixins.scaleSize(136),
         marginLeft: Mixins.scaleSize(24),
-        marginTop: Mixins.scaleSize(16)
+        marginTop: Mixins.scaleSize(24)
     },
     currentCategoryLabel: {
         ...Typography.FONT_SEMI_BOLD,
@@ -104,7 +104,7 @@ const Style = StyleSheet.create({
         zIndex: isLastBackGroundSquare ? 2 : 3,
         backgroundColor: Colors.rgba(Colors.PRIMARY, isLastBackGroundSquare ? 0.4 : 0.8),
         borderRadius: Mixins.scaleSize(12)
-    })
+    }),
 });
 
 export default Style;

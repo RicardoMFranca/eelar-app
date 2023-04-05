@@ -61,7 +61,8 @@ const Style = StyleSheet.create({
         ...Typography.FONT_REGULAR,
         fontSize: Typography.FONT_SIZE_14,
         color: Colors.BLACK_DEFAULT,
-        marginTop: Mixins.scaleSize(16)
+        marginTop: Mixins.scaleSize(16),
+        lineHeight: Mixins.scaleSize(20)
     },
     titleSpacing: {
         marginVertical: Mixins.scaleSize(24),

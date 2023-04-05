@@ -16,8 +16,8 @@ export default function EventCard(props){
     >
       <Image source={event?.foto_principal} style={Style.eventThumbnail}/>
       <View style={Style.eventDate}>
-        <Text style={GeneralStyles.fonts.eventMonth}>{handleEventDate('month')}</Text>
-        <Text style={GeneralStyles.fonts.eventDay}>{handleEventDate('day')}</Text>
+        <Text style={GeneralStyles.fonts.eventMonth}>{handleEventDate('month', event?.data)}</Text>
+        <Text style={GeneralStyles.fonts.eventDay}>{handleEventDate('day', event?.data)}</Text>
       </View>
       <LinearGradient
         start={{x: 0, y: 0}} end={{x: 0, y: 1.0}}

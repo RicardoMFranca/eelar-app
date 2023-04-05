@@ -4,10 +4,11 @@ import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import { Colors, GeneralStyles, Mixins } from '../../../../styles';
+import { goToMaps, handleEventDate } from '../../../../util/helpers';
+
 import Style from './style';
 
 import LoaderContext from '../../../../contexts/loader';
-import { handleEventDate } from '../../../../util/helpers';
 import DefaultBtn from '../../../../components/buttons/default-btn';
 import GobackBtn from '../../../../components/go-back-btn';
 
@@ -18,7 +19,7 @@ export default function EventDetailScreen(props){
   useEffect(() => {
     setEvent(props.route.params.event)
   }, [])
-  
+
   return (
     <>
       <ScrollView
@@ -48,8 +49,8 @@ export default function EventDetailScreen(props){
               <Text style={[Style.eventAddress, Style.regularFont]}>{event?.endereco}</Text>
             </View>
             <View style={Style.eventDate}>
-              <Text style={GeneralStyles.fonts.eventMonth}>{handleEventDate('month')}</Text>
-              <Text style={GeneralStyles.fonts.eventDay}>{handleEventDate('day')}</Text>
+              <Text style={GeneralStyles.fonts.eventMonth}>{handleEventDate('month', event?.data)}</Text>
+              <Text style={GeneralStyles.fonts.eventDay}>{handleEventDate('day', event?.data)}</Text>
             </View>
           </View>
           <View style={Style.eventTimeContainer}>
@@ -66,7 +67,7 @@ export default function EventDetailScreen(props){
       </ScrollView>
       <View style={Style.mapsBtnContainer}>
         <DefaultBtn 
-          onPress={() => props.navigation.navigate("Login")}
+          onPress={() => goToMaps(event?.endereco)}
           label='Abrir no Maps'
           customStyle={Style.mapsBtn}
           textColor={Colors.BLACK_DEFAULT}

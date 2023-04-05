@@ -70,8 +70,9 @@ export const fonts = StyleSheet.create({
     },
     eventMonth: {
         ...Typography.FONT_REGULAR,
-        fontSize: Typography.FONT_SIZE_10,
+        fontSize: Typography.FONT_SIZE_12,
         color: Colors.rgba(Colors.BLACK_DEFAULT, 0.8),
+        textTransform: 'capitalize',
     },
     eventDay: {
         ...Typography.FONT_BOLD,

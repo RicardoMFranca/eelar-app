@@ -6,7 +6,7 @@ import GobackBtn from '../go-back-btn';
 import { removeAccentes } from '../../util/helpers';
 
 export default function WavyHeader(props){
-  const {data, setSearchedItems} = props;
+  const {data, setSearchedItems, goBackBtn} = props;
 
   const search = (text) => {
     setSearchedItems(data?.filter((item) => removeAccentes(item.nome.toLowerCase()).includes(removeAccentes(text))));
@@ -19,12 +19,15 @@ export default function WavyHeader(props){
         backgroundColor={'transparent'}
         translucent
       />
-      {/* <GobackBtn
-        {...props}
-      /> */}
+      {goBackBtn &&
+        <GobackBtn
+          {...props}
+          customStyle={Style.goBackBtn}
+        />
+      }
       <Image source={require('../../assets/images/wave-background/wave-background.png')} style={Style.waveBackground}/>
       <View style={Style.headerContiner}>
-        <Text style={Style.headerTitle}>Aqui um texto de no máximo duas linhas</Text>
+        <Text style={Style.headerTitle(goBackBtn)}>Encontre Locais e{'\n'}Equipamentos Públicos</Text>
         <SearchBar
           setValue={(text) => search(text)}
         />

@@ -1,6 +1,9 @@
 import { CommonActions } from '@react-navigation/native';
+import { Linking } from 'react-native';
 import 'intl';
 import 'intl/locale-data/jsonp/pt-BR';
+import moment from 'moment';
+import 'moment/locale/pt-br';
 
 export const findIndexInArrayById = (list, reference, param) => {
   var index = -1;
@@ -98,12 +101,12 @@ export const removeAccents = (value) => {
   return String(value).normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
-export const handleEventDate = (date) => {
+export const handleEventDate = (date_type, date) => {
   const typesOfDate = {
-    'day': '15',
-    'month': 'NOV'
+    'day': moment(date).format('D'),
+    'month': moment(date).format('MMM')
   };
-  return typesOfDate[date];
+  return typesOfDate[date_type];
 };
 
 export const removeAccentes = (string) => {
@@ -115,4 +118,13 @@ export const removeAccentes = (string) => {
   string = string.replace(new RegExp('[ÚÙÛ]','gi'), 'u');
   string = string.replace(new RegExp('[Ç]','gi'), 'c');
   return string;    
-}
+};
+
+export const goToMaps = (fullAddress) => {
+  const url = Platform.select({
+    ios: `maps:0,0?q=${fullAddress}`,
+    android: `geo:0,0?q=${fullAddress}`,
+  })
+
+  Linking.openURL(url)
+};

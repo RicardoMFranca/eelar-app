@@ -10,7 +10,7 @@ import LoaderContext from '../../../contexts/loader';
 import CategoryCard from '../../../components/category-card';
 import WavyHeader from '../../../components/wavy-header';
 import EventCard from '../../../components/event-card';
-import { staticEvents } from '../../../util/static-data';
+import { staticCategories, staticEvents } from '../../../util/static-data';
 import NotFound from '../../../components/not-found';
 
 export default function EventsScreen(props){
@@ -47,15 +47,7 @@ export default function EventsScreen(props){
   };
 
   const getData = async () => {
-
-    const categories = [
-      {id: 1, nome: "Aulão", iconName: 'account-group'},
-      {id: 2, nome: "Show", iconName: 'ticket'},
-      {id: 3, nome: "Praia", iconName: 'beach'},
-      {id: 4, nome: "Teatro", iconName: 'theater'},
-    ];
-    setCategories(categories);
-
+    setCategories(staticCategories);
     setEvents(staticEvents);
     setItems(staticEvents);
   };
@@ -86,6 +78,7 @@ export default function EventsScreen(props){
         {...props}
         setSearchedItems={setItems}
         data={events}
+        goBackBtn
       />
       <SafeAreaView style={GeneralStyles.aligns.container}>
         <Text style={[GeneralStyles.aligns.sessionTitle, GeneralStyles.fonts.title]}>Próximos eventos</Text>
@@ -122,7 +115,7 @@ export default function EventsScreen(props){
             <CategoryCard 
               category={item}
               key={'categoria-' + item.id}
-              onPress={() => props.navigation.navigate("Category")}
+              onPress={() => props.navigation.navigate("Category", {category: item})}
             />
           ))}
         </ScrollView>

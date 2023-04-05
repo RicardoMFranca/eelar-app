@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Image, ScrollView, Text, View } from 'react-native';
 import Animated, { Extrapolate, interpolate, useAnimatedStyle, useSharedValue } from "react-native-reanimated";
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -9,6 +9,7 @@ import Style from './style';
 import Carousel from 'react-native-reanimated-carousel';
 import DefaultBtn from '../../../components/buttons/default-btn';
 import GobackBtn from '../../../components/go-back-btn';
+import { goToMaps } from '../../../util/helpers';
 
 export default function AmbientDetailScreen(props){
   const [ambient, setAmbient] = useState({});
@@ -147,12 +148,14 @@ export default function AmbientDetailScreen(props){
         <View style={Style.ambientInfoContainer}>
           <View style={Style.nameCategoryAlign}>
             <Text style={Style.ambientName}>{ambient?.nome}</Text>
-            <View style={Style.category}>
-              <Text style={Style.categoryLabel}>Parque</Text>
-            </View>
+            {ambient?.categorias?.map((item) => (
+              <View style={Style.category}>
+                <Text style={Style.categoryLabel}>{item?.nome}</Text>
+              </View>
+            ))}
           </View>
           <Text style={Style.ambientAddress}>{ambient?.endereco}</Text>
-          <Text style={Style.ambientDescription}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </Text>
+          <Text style={Style.ambientDescription}>{ambient?.descricao}</Text>
           <Text style={[GeneralStyles.fonts.title, Style.titleSpacing]}>Informações do Local</Text>
           {ambientInfoHorizontalCard()}
           {ambientInfoHorizontalCard()}
@@ -161,7 +164,7 @@ export default function AmbientDetailScreen(props){
       </ScrollView>
       <View style={Style.mapsBtnContainer}>
         <DefaultBtn
-          onPress={() => props.navigation.navigate("Login")}
+          onPress={() => goToMaps(ambient?.endereco)}
           label='Abrir no Maps'
           customStyle={Style.mapsBtn}
           rightIcon={'location-pin'}

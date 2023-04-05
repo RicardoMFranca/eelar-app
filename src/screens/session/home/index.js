@@ -2,12 +2,12 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Image, ScrollView, Text, 
   TouchableOpacity, View, SafeAreaView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {staticAmbients} from '../../../util/static-data';
 
+import {staticAmbients, staticCategories} from '../../../util/static-data';
 import { GeneralStyles } from '../../../styles';
-import Style from './style';
-
 import LoaderContext from '../../../contexts/loader';
+
+import Style from './style';
 
 import CategoryCard from '../../../components/category-card';
 import AmbientCard from '../../../components/ambient-card';
@@ -41,18 +41,7 @@ export default function HomeScreen(props){
     });
   }
   const getData = async () => {
-
-    const categories = [
-      {id: 3, nome: "Praça", iconName: 'nature-people'},
-      {id: 5, nome: "Campo", iconName: 'soccer-field'},
-      {id: 6, nome: "Skate Parque", iconName: 'skateboarding'},
-      {id: 7, nome: "Quadra", iconName: 'soccer-field'},
-      {id: 1, nome: "Aulão", iconName: 'account-group'},
-      {id: 2, nome: "Show", iconName: 'ticket'},
-      {id: 4, nome: "Teatro", iconName: 'theater'},
-    ];
-    setCategories(categories);
-
+    setCategories(staticCategories);
     setAmbients(staticAmbients);
     setItems(staticAmbients);
   };
@@ -101,7 +90,7 @@ export default function HomeScreen(props){
           {categories.map((item) => (
             <CategoryCard 
               category={item}
-              onPress={() => props.navigation.navigate("Category")}
+              onPress={() => props.navigation.navigate("Category", {category: item})}
               key={'categoria-' + item.id}
             />
           ))}

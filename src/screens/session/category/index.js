@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Image, ScrollView, Text, View, SafeAreaView, FlatList, TouchableOpacity } from 'react-native';
+import { Image, Text, View, FlatList, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import { GeneralStyles, Mixins } from '../../../styles';
@@ -7,18 +7,17 @@ import Style from './style';
 
 import LoaderContext from '../../../contexts/loader';
 
-import CategoryCard from '../../../components/category-card';
-import WavyHeader from '../../../components/wavy-header';
-import EventCard from '../../../components/event-card';
 import SearchBar from '../../../components/search-bar';
 import AmbientCard from '../../../components/ambient-card';
 import { staticAmbients } from '../../../util/static-data';
+import GobackBtn from '../../../components/go-back-btn';
+import { removeAccentes } from '../../../util/helpers';
 
 export default function CategoryScreen(props){
   const { setLoading } = useContext(LoaderContext);
 
-  const [refreshing, setRefreshing] = useState(false);
   const [ambients, setAmbients] = useState([]);
+  const [searchedItems, setSearchedItems] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -39,16 +38,23 @@ export default function CategoryScreen(props){
     });
   }
 
-  const onRefresh = async () => {
-    setRefreshing(true);
-    await getData();
-    setRefreshing(false);
-  }
-
   const getData = async () => {
+    setAmbients([]);
+    const categoryId = props.route.params.category?.id;
 
-    setAmbients(staticAmbients);
-  }
+    staticAmbients.map((item) => {
+      item.categorias.map((categoria) => {
+        if (categoria.id == categoryId) {
+          setSearchedItems(ambients => [...ambients, item])
+          setAmbients(ambients => [...ambients, item]);
+        }
+      })
+    })
+  };
+
+  const search = (text) => {
+    setSearchedItems(ambients?.filter((item) => removeAccentes(item.nome.toLowerCase()).includes(removeAccentes(text))));
+  };
 
   const categoryHeader = (
     <LinearGradient
@@ -57,13 +63,19 @@ export default function CategoryScreen(props){
       colors={['rgba(64, 123, 255, 0.8)', '#9EBCFF']}
       style={Style.categoryHeader}
     >
+      <GobackBtn
+        {...props}
+        customStyle={Style.goBackBtn}
+      />
       <Image source={require('../../../assets/images/category-header-img/category-header-img.png')} style={Style.categoryHeaderImage}/>
       <View style={Style.currentCategoryContainer}>
         <Text style={Style.currentCategoryLabel}>Você está vendo a categoria de:</Text>
-        <Text style={Style.currentCategory}>Parques</Text>
+        <Text style={Style.currentCategory}>{props.route.params.category?.nome}</Text>
       </View>
       <View style={Style.searchBarContainer}>
-        <SearchBar/>
+        <SearchBar 
+          setValue={(text) => search(text)}
+        />
       </View>
     </LinearGradient>
   );
@@ -90,7 +102,7 @@ export default function CategoryScreen(props){
 
   const ambientsList =(
     <FlatList
-      data={ambients}
+      data={searchedItems}
       style={Style.listContainer}
       contentContainerStyle={{paddingBottom: Mixins.scaleSize(56)}}
       showsHorizontalScrollIndicator={false}

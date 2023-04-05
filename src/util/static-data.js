@@ -2,7 +2,7 @@ export const staticAmbients = [
     {
         id: 7, 
         nome: 'Praia Boa Viagem', 
-        endereco: 'Av. Alm. Benjamin Sodré - Boa Viagem', 
+        endereco: 'Av. Alm. Benjamin Sodré, 342 - Boa Viagem, Niterói', 
         foto_principal: require('../assets/images/temp/viagem/viagem-1.jpg'),
         fotos: [
             require('../assets/images/temp/viagem/viagem-1.jpg'),
@@ -11,14 +11,15 @@ export const staticAmbients = [
             require('../assets/images/temp/viagem/viagem-4.jpg'),
             require('../assets/images/temp/viagem/viagem-5.jpg'),
         ],
+        descricao: 'A praia de Boa Viagem em Niterói é uma pequena faixa de areia, com águas calmas, situada próxima a um dos principais cartões-postais da cidade, o MAC (Museu de Arte Contemporânea).',
         categorias: [
-            {id: 1, nome: 'praia'}
+            {id: 8, nome: 'Praia'}
         ]
     },
     {
         id: 6, 
         nome: 'Praia de Icaraí', 
-        endereco: 'Av. Jorn. Alberto Francisco Torres - Icaraí', 
+        endereco: 'Praia de Icaraí - Icaraí', 
         foto_principal: require('../assets/images/temp/icarai/icarai-1.jpg'),
         fotos: [
             require('../assets/images/temp/icarai/icarai-1.jpg'),
@@ -27,8 +28,9 @@ export const staticAmbients = [
             require('../assets/images/temp/icarai/icarai-4.jpg'),
             require('../assets/images/temp/icarai/icarai-5.jpg'),
         ],
+        descricao: 'A praia de Icaraí em Niterói é uma das mais famosas da cidade, com uma extensa faixa de areia, ciclovia, quiosques e uma vista deslumbrante do Rio de Janeiro.',
         categorias: [
-            {id: 1, nome: 'praia'}
+            {id: 8, nome: 'Praia'}
         ]
     },
     {
@@ -43,8 +45,9 @@ export const staticAmbients = [
             require('../assets/images/temp/bento/bento-4.jpg'),
             require('../assets/images/temp/bento/bento-5.jpg'),
         ],
+        descricao: 'O Campo de São Bento em Niterói é um grande parque urbano com áreas verdes, lagoas artificiais, ciclovia, quadras esportivas e diversos eventos culturais e gastronômicos.',
         categorias: [
-            {id: 1, nome: 'campo'}
+            {id: 3, nome: 'Praça'}
         ]
     },
     {
@@ -58,8 +61,9 @@ export const staticAmbients = [
             require('../assets/images/temp/cidade/cidade-3.jpg'),
             require('../assets/images/temp/cidade/cidade-4.jpg'),
         ],
+        descricao: 'O Parque da Cidade em Niterói é o maior parque urbano da região, com uma área de preservação ambiental, trilhas, mirantes, anfiteatro, área de piquenique e uma vista incrível da cidade.',
         categorias: [
-            {id: 1, nome: 'campo'}
+            {id: 3, nome: 'Campo'}
         ]
     },
     {
@@ -74,8 +78,9 @@ export const staticAmbients = [
             require('../assets/images/temp/fonseca/fonseca-4.jpg'),
             require('../assets/images/temp/fonseca/fonseca-5.jpg'),
         ],
+        descricao: 'O Horto do Fonseca em Niterói é uma área de preservação ambiental com trilhas ecológicas e um belo lago, já o Skate Parque Horto do Fonseca é um espaço dedicado aos praticantes de skate, com pistas e obstáculos variados, além de área para convivência e eventos relacionados ao esporte.',
         categorias: [
-            {id: 1, nome: 'Skate Parque'}
+            {id: 6, nome: 'Skate Parque'}
         ]
     },
     {
@@ -90,8 +95,9 @@ export const staticAmbients = [
             require('../assets/images/temp/beltrao/beltrao-4.jpg'),
             require('../assets/images/temp/beltrao/beltrao-5.jpg'),
         ],
+        descricao: 'O Campo do Beltrão em Niterói é um espaço dedicado ao futebol, tendo também equipamentos de musculação e ginástica.',
         categorias: [
-            {id: 1, nome: 'campo de futebol'}
+            {id: 5, nome: 'Campo de Futebol'}
         ]
     },
     {
@@ -99,6 +105,7 @@ export const staticAmbients = [
         nome: 'Praça Várzea das Moças', 
         endereco: 'Praça Liberdade - Várzea das Moças', 
         foto_principal: require('../assets/images/temp/varzea/varzea-1.jpg'),
+        descricao: 'A Praça Várzea das Moças em Niterói é um espaço amplo com áreas verdes, bancos, e equipamentos de musculação e ginástica. É um local ideal para atividades ao ar livre e convivência comunitária.',
         fotos: [
             require('../assets/images/temp/varzea/varzea-1.jpg'),
             require('../assets/images/temp/varzea/varzea-2.jpg'),
@@ -106,7 +113,7 @@ export const staticAmbients = [
             require('../assets/images/temp/varzea/varzea-4.jpg'),
             require('../assets/images/temp/varzea/varzea-5.jpg'),
         ],
-        categorias: [{id: 1, nome: 'Praça'}]
+        categorias: [{id: 3, nome: 'Praça'}]
     },
     {
         id: 4, 
@@ -119,13 +126,15 @@ export const staticAmbients = [
             require('../assets/images/temp/jacare/jacare-3.jpg'),
             require('../assets/images/temp/jacare/jacare-4.jpg'),
         ],
-        categorias: [{id: 1, nome: 'quadra'}]
+        descricao: 'A Quadra do Jacaré em Niterói é um espaço público para a prática de esportes, principalmente futebol e basquete, com iluminação adequada e área de convivência. É bastante frequentada pelos moradores da região.',
+        categorias: [{id: 7, nome: 'Quadra'}]
     },
     {
         id: 5, 
         nome: 'Praça Levi Francisco da Cruz Nunes', 
         endereco: 'Estr. Washington Luís - Largo da batalha', 
         foto_principal: require('../assets/images/temp/largo/largo-1.jpeg'),
+        descricao: 'Essa praça é um espaço animado e diversificado, com brinquedos para crianças, uma pista de skate e uma cesta de basquete. Com áreas verdes, bancos e iluminação adequada, é o local ideal para atividades ao ar livre e socialização.',
         fotos: [
             require('../assets/images/temp/largo/largo-1.jpeg'),
             require('../assets/images/temp/largo/largo-2.jpeg'),
@@ -137,7 +146,7 @@ export const staticAmbients = [
             require('../assets/images/temp/largo/largo-8.jpeg'),
         ],
         categorias: [
-            {id: 1, nome: 'Praça'}
+            {id: 3, nome: 'Praça'}
         ]
     },
 ]
@@ -183,4 +192,15 @@ export const staticEvents = [
         foto_principal: require('../assets/images/temp/patins/patins.jpg'), 
         descricao: 'O evento de patins no Caminho Niemeyer será uma oportunidade emocionante para patinadores de todas as habilidades mostrarem suas habilidades em um ambiente único e deslumbrante. Os participantes poderão desfrutar de um trajeto suave e desafiador, com vista para a Baía de Guanabara e a famosa paisagem do Rio de Janeiro. Haverá música animada, comida deliciosa e muita diversão para toda a família. Este é um evento imperdível para qualquer amante de patins ou para aqueles que desejam experimentar algo novo e emocionante.'
     },
+];
+
+export const staticCategories = [
+    {id: 3, nome: "Praças/Parques", iconName: 'nature-people'},
+    {id: 5, nome: "Campos de futebol", iconName: 'soccer-field'},
+    {id: 6, nome: "Skate Parque", iconName: 'skateboarding'},
+    {id: 7, nome: "Quadras", iconName: 'soccer-field'},
+    {id: 8, nome: "Praias", iconName: 'beach'},
+    // {id: 1, nome: "Aulão", iconName: 'account-group'},
+    // {id: 2, nome: "Show", iconName: 'ticket'},
+    // {id: 4, nome: "Teatro", iconName: 'theater'},
 ];
