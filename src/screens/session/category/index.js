@@ -40,6 +40,7 @@ export default function CategoryScreen(props){
 
   const getData = async () => {
     setAmbients([]);
+    setSearchedItems([]);
     const categoryId = props.route.params.category?.id;
 
     staticAmbients.map((item) => {
@@ -125,7 +126,7 @@ export default function CategoryScreen(props){
   );
 
   return (
-    <View style={GeneralStyles.aligns.container}>
+    <View style={[GeneralStyles.aligns.container, GeneralStyles.aligns.whiteBackground]}>
       {categoryHeader}
       {ambientsList}
     </View>

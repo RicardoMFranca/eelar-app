@@ -14,7 +14,6 @@ const Style = StyleSheet.create({
     },
     searchBarContainer: {
         width: Mixins.WINDOW_WIDTH - Mixins.scaleSize(48),
-        backgroundColor: 'yellow',
         position: 'absolute',
         bottom: Mixins.scaleSize(-24),
         left: Mixins.scaleSize(24),
@@ -100,7 +99,6 @@ const Style = StyleSheet.create({
         left: Mixins.scaleSize(isLastBackGroundSquare ? 16 : 8),
         width: Mixins.WINDOW_WIDTH/2 - Mixins.scaleSize(isLastBackGroundSquare ? 68 : 48),
         height: Mixins.scaleSize(100),
-        backgroundColor: 'yellow',
         zIndex: isLastBackGroundSquare ? 2 : 3,
         backgroundColor: Colors.rgba(Colors.PRIMARY, isLastBackGroundSquare ? 0.4 : 0.8),
         borderRadius: Mixins.scaleSize(12)

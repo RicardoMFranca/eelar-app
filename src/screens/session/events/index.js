@@ -73,6 +73,7 @@ export default function EventsScreen(props){
     <ScrollView
       showsHorizontalScrollIndicator={false}
       showsVerticalScrollIndicator={false}
+      style={GeneralStyles.aligns.whiteBackground}
     >
       <WavyHeader
         {...props}

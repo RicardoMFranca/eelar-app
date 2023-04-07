@@ -26,7 +26,7 @@ export default function RegisterScreen(props){
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}> 
       <>
         <ScrollView 
-          style={{flexgrow: 1, height: '100%'}}
+          style={[{flexgrow: 1, height: '100%'}, GeneralStyles.aligns.whiteBackground]}
           contentContainerStyle={{flexGrow: 1}}
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
@@ -56,7 +56,7 @@ export default function RegisterScreen(props){
               />
 
               <DefaultBtn
-                onPress={() => null} 
+                onPress={() => props.navigation.navigate('Session')} 
                 label={'Cadastrar'}
                 disabled={!email || !password}
                 textColor={Colors.WHITE_DEFAULT}

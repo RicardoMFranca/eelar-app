@@ -14,6 +14,13 @@ export const staticAmbients = [
         descricao: 'A praia de Boa Viagem em Niterói é uma pequena faixa de areia, com águas calmas, situada próxima a um dos principais cartões-postais da cidade, o MAC (Museu de Arte Contemporânea).',
         categorias: [
             {id: 8, nome: 'Praia'}
+        ],
+        informacoes: [
+            {id: 2, titulo: 'Há banheiros públicos em condições de uso? Há bebedouros?', descricao: 'Não', nome_icone: 'toilet'},
+            {id: 3, titulo: 'Há sombra e arborização adequada?', descricao: 'Não', nome_icone: 'tree-outline'},
+            {id: 4, titulo: 'Há equipamentos de ginástica e musculação?', descricao: 'Não', nome_icone: 'dumbbell'},
+            {id: 5, titulo: 'Há área para crianças?', descricao: 'Não', nome_icone: 'human-male-child'},
+            {id: 10, titulo: 'Há área para caminhada?', descricao: 'Sim', nome_icone: 'walk'},
         ]
     },
     {
@@ -31,6 +38,13 @@ export const staticAmbients = [
         descricao: 'A praia de Icaraí em Niterói é uma das mais famosas da cidade, com uma extensa faixa de areia, ciclovia, quiosques e uma vista deslumbrante do Rio de Janeiro.',
         categorias: [
             {id: 8, nome: 'Praia'}
+        ],
+        informacoes: [
+            {id: 2, titulo: 'Há banheiros públicos em condições de uso? Há bebedouros?', descricao: 'Não', nome_icone: 'toilet'},
+            {id: 3, titulo: 'Há sombra e arborização adequada?', descricao: 'Sim', nome_icone: 'tree-outline'},
+            {id: 4, titulo: 'Há equipamentos de ginástica e musculação?', descricao: 'Sim', nome_icone: 'dumbbell'},
+            {id: 5, titulo: 'Há área para crianças?', descricao: 'Não', nome_icone: 'human-male-child'},
+            {id: 10, titulo: 'Há área para caminhada?', descricao: 'Sim', nome_icone: 'walk'},
         ]
     },
     {
@@ -48,6 +62,13 @@ export const staticAmbients = [
         descricao: 'O Campo de São Bento em Niterói é um grande parque urbano com áreas verdes, lagoas artificiais, ciclovia, quadras esportivas e diversos eventos culturais e gastronômicos.',
         categorias: [
             {id: 3, nome: 'Praça'}
+        ],
+        informacoes: [
+            {id: 2, titulo: 'Há banheiros públicos em condições de uso? Há bebedouros?', descricao: 'Não', nome_icone: 'toilet'},
+            {id: 3, titulo: 'Há sombra e arborização adequada?', descricao: 'Sim', nome_icone: 'tree-outline'},
+            {id: 4, titulo: 'Há equipamentos de ginástica e musculação?', descricao: 'Sim', nome_icone: 'dumbbell'},
+            {id: 5, titulo: 'Há área para crianças?', descricao: 'Não', nome_icone: 'human-male-child'},
+            {id: 10, titulo: 'Há área para caminhada?', descricao: 'Sim', nome_icone: 'walk'},
         ]
     },
     {
@@ -64,6 +85,13 @@ export const staticAmbients = [
         descricao: 'O Parque da Cidade em Niterói é o maior parque urbano da região, com uma área de preservação ambiental, trilhas, mirantes, anfiteatro, área de piquenique e uma vista incrível da cidade.',
         categorias: [
             {id: 3, nome: 'Campo'}
+        ],
+        informacoes: [
+            {id: 2, titulo: 'Há banheiros públicos em condições de uso? Há bebedouros?', descricao: 'Não', nome_icone: 'toilet'},
+            {id: 3, titulo: 'Há sombra e arborização adequada?', descricao: 'Sim', nome_icone: 'tree-outline'},
+            {id: 4, titulo: 'Há equipamentos de ginástica e musculação?', descricao: 'Sim', nome_icone: 'dumbbell'},
+            {id: 5, titulo: 'Há área para crianças?', descricao: 'Não', nome_icone: 'human-male-child'},
+            {id: 10, titulo: 'Há área para caminhada?', descricao: 'Sim', nome_icone: 'walk'},
         ]
     },
     {
@@ -81,7 +109,15 @@ export const staticAmbients = [
         descricao: 'O Horto do Fonseca em Niterói é uma área de preservação ambiental com trilhas ecológicas e um belo lago, já o Skate Parque Horto do Fonseca é um espaço dedicado aos praticantes de skate, com pistas e obstáculos variados, além de área para convivência e eventos relacionados ao esporte.',
         categorias: [
             {id: 6, nome: 'Skate Parque'}
+        ],
+        informacoes: [
+            {id: 2, titulo: 'Há banheiros públicos em condições de uso? Há bebedouros?', descricao: 'Não', nome_icone: 'toilet'},
+            {id: 3, titulo: 'Há sombra e arborização adequada?', descricao: 'Sim', nome_icone: 'tree-outline'},
+            {id: 4, titulo: 'Há equipamentos de ginástica e musculação?', descricao: 'Sim', nome_icone: 'dumbbell'},
+            {id: 5, titulo: 'Há área para crianças?', descricao: 'Sim', nome_icone: 'human-male-child'},
+            {id: 7, titulo: 'Há área para esportes?', descricao: 'Sim', nome_icone: 'skateboarding'},
         ]
+        
     },
     {
         id: 3, 
@@ -98,6 +134,12 @@ export const staticAmbients = [
         descricao: 'O Campo do Beltrão em Niterói é um espaço dedicado ao futebol, tendo também equipamentos de musculação e ginástica.',
         categorias: [
             {id: 5, nome: 'Campo de Futebol'}
+        ],
+        informacoes: [
+            {id: 2, titulo: 'Há banheiros públicos em condições de uso? Há bebedouros?', descricao: 'Não', nome_icone: 'toilet'},
+            {id: 3, titulo: 'Há sombra e arborização adequada?', descricao: 'Sim', nome_icone: 'tree-outline'},
+            {id: 4, titulo: 'Há equipamentos de ginástica e musculação?', descricao: 'Sim', nome_icone: 'dumbbell'},
+            {id: 5, titulo: 'Há área para crianças?', descricao: 'Não', nome_icone: 'human-male-child'},
         ]
     },
     {
@@ -113,7 +155,16 @@ export const staticAmbients = [
             require('../assets/images/temp/varzea/varzea-4.jpg'),
             require('../assets/images/temp/varzea/varzea-5.jpg'),
         ],
-        categorias: [{id: 3, nome: 'Praça'}]
+        categorias: [
+            {id: 3, nome: 'Praça'}
+        ],
+        informacoes: [
+            {id: 1, titulo: 'Horário de Funcionamento', descricao: '24 horas', nome_icone: 'watch-variant'},
+            {id: 2, titulo: 'Há banheiros públicos em condições de uso? Há bebedouros?', descricao: 'Não', nome_icone: 'toilet'},
+            {id: 3, titulo: 'Há sombra e arborização adequada?', descricao: 'Sim', nome_icone: 'tree-outline'},
+            {id: 4, titulo: 'Há equipamentos de ginástica e musculação?', descricao: 'Sim', nome_icone: 'dumbbell'},
+            {id: 5, titulo: 'Há área para crianças?', descricao: 'Não', nome_icone: 'human-male-child'},
+        ]
     },
     {
         id: 4, 
@@ -127,7 +178,15 @@ export const staticAmbients = [
             require('../assets/images/temp/jacare/jacare-4.jpg'),
         ],
         descricao: 'A Quadra do Jacaré em Niterói é um espaço público para a prática de esportes, principalmente futebol e basquete, com iluminação adequada e área de convivência. É bastante frequentada pelos moradores da região.',
-        categorias: [{id: 7, nome: 'Quadra'}]
+        categorias: [
+            {id: 7, nome: 'Quadra'}
+        ],
+        informacoes: [
+            {id: 2, titulo: 'Há banheiros públicos em condições de uso? Há bebedouros?', descricao: 'Não', nome_icone: 'toilet'},
+            {id: 3, titulo: 'Há sombra e arborização adequada?', descricao: 'Sim', nome_icone: 'tree-outline'},
+            {id: 4, titulo: 'Há equipamentos de ginástica e musculação?', descricao: 'Não', nome_icone: 'dumbbell'},
+            {id: 5, titulo: 'Há área para crianças?', descricao: 'Não', nome_icone: 'human-male-child'},
+        ]
     },
     {
         id: 5, 
@@ -147,6 +206,14 @@ export const staticAmbients = [
         ],
         categorias: [
             {id: 3, nome: 'Praça'}
+        ],
+        informacoes: [
+            {id: 1, titulo: 'Horário de Funcionamento', descricao: '24 horas', nome_icone: 'watch-variant'},
+            {id: 2, titulo: 'Há banheiros públicos em condições de uso? Há bebedouros?', descricao: 'Não', nome_icone: 'toilet'},
+            {id: 3, titulo: 'Há sombra e arborização adequada?', descricao: 'Sim', nome_icone: 'tree-outline'},
+            {id: 4, titulo: 'Há equipamentos de ginástica e musculação?', descricao: 'Sim', nome_icone: 'dumbbell'},
+            {id: 5, titulo: 'Há área para crianças?', descricao: 'Sim', nome_icone: 'human-male-child'},
+            {id: 7, titulo: 'Há área para esportes?', descricao: 'Sim', nome_icone: 'basketball'},
         ]
     },
 ]

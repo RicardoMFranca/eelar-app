@@ -4,7 +4,7 @@ import { Colors, Mixins, Typography } from '../../../styles';
 const Style = StyleSheet.create({
   titleText: {
     ...Typography.FONT_SEMI_BOLD,
-    fontSize: Typography.FONT_SIZE_40,
+    fontSize: Typography.FONT_SIZE_32,
     textAlign: 'center',
     color: Colors.WHITE_DEFAULT
   },

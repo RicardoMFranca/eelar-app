@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Image, ScrollView, Text, 
   TouchableOpacity, View, SafeAreaView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import Animated, { FadeInUp } from 'react-native-reanimated';
 
 import {staticAmbients, staticCategories} from '../../../util/static-data';
 import { GeneralStyles } from '../../../styles';
@@ -72,14 +73,21 @@ export default function HomeScreen(props){
     <ScrollView
       showsHorizontalScrollIndicator={false}
       showsVerticalScrollIndicator={false}
+      style={GeneralStyles.aligns.whiteBackground}
     >
       <WavyHeader
         {...props}
         setSearchedItems={setItems}
         data={ambients}
+        logout
       />
       <SafeAreaView style={GeneralStyles.aligns.container}>
-        <Text style={[GeneralStyles.aligns.sessionTitle, GeneralStyles.fonts.title]}>Categorias</Text>
+        <Animated.Text
+          // entering={FadeInUp.duration(400).delay(400)}
+          style={[GeneralStyles.aligns.sessionTitle, GeneralStyles.fonts.title]}
+        >
+          Categorias
+        </Animated.Text>
         <ScrollView
           style={GeneralStyles.aligns.defaultList}
           contentContainerStyle={{paddingRight: 32}}
@@ -87,8 +95,9 @@ export default function HomeScreen(props){
           showsVerticalScrollIndicator={false}
           horizontal
         >
-          {categories.map((item) => (
+          {categories.map((item, index) => (
             <CategoryCard 
+              cardIndex={index}
               category={item}
               onPress={() => props.navigation.navigate("Category", {category: item})}
               key={'categoria-' + item.id}
@@ -96,7 +105,12 @@ export default function HomeScreen(props){
           ))}
         </ScrollView>
         <View style={Style.selectedPlaces}>
-          <Text style={[GeneralStyles.aligns.sessionTitle, GeneralStyles.fonts.title]}>Espaços próximos de você</Text>
+          <Animated.Text 
+            // entering={FadeInUp.duration(600).delay(200)}
+            style={[GeneralStyles.aligns.sessionTitle, GeneralStyles.fonts.title]}
+          >
+            Espaços próximos de você
+          </Animated.Text>
         </View>
         <ScrollView 
           style={GeneralStyles.aligns.defaultList}

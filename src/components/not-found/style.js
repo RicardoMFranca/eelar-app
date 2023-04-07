@@ -4,7 +4,8 @@ import { Colors, Mixins, Typography } from '../../styles';
 const Style = StyleSheet.create({
     notFoundContainer: {
         alignItems: 'center',
-        marginTop: Mixins.scaleSize(32)
+        marginTop: Mixins.scaleSize(32),
+        width: Mixins.WINDOW_WIDTH - Mixins.scaleSize(48),
     },
     notFoundText: {
         ...Typography.FONT_BOLD,
@@ -12,7 +13,6 @@ const Style = StyleSheet.create({
         marginTop: Mixins.scaleSize(18),
         fontSize: Typography.FONT_SIZE_16,
         color: Colors.GRAY_DARK
-
     }
 });
 

@@ -34,6 +34,9 @@ export const aligns = StyleSheet.create({
         paddingLeft: Mixins.scaleSize(24),
         marginTop: Mixins.scaleSize(32),
         marginBottom: Mixins.scaleSize(16),
+    },
+    whiteBackground: {
+        backgroundColor: Colors.WHITE_DEFAULT,
     }
 });
 

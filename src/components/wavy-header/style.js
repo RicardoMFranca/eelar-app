@@ -16,15 +16,24 @@ const Style = StyleSheet.create({
         paddingHorizontal: Mixins.scaleSize(24),
         marginTop: Mixins.scaleSize(84)
     },
-    headerTitle: (withGoBackBtn) => ({
+    headerTitle: () => ({
         ...Typography.FONT_SEMI_BOLD,
         fontSize: Typography.FONT_SIZE_18,
         lineHeight: Mixins.scaleSize(24),
         letterSpacing: Mixins.scaleSize(-0.28),
         color: Colors.WHITE_DEFAULT,
-        marginBottom: Mixins.scaleSize(16),
-        marginTop: withGoBackBtn ? Mixins.scaleSize(16) : 0  
+        marginVertical: Mixins.scaleSize(16)
     }),
+    logoutBtn: {
+        position: 'absolute',
+        top: Mixins.scaleSize(48),
+        zIndex: 3,
+        left: Mixins.scaleSize(24)
+    },
+    headerTitleContainer: {
+        height: Mixins.scaleSize(76),
+        width: '100%'
+    }
 });
 
 export default Style;

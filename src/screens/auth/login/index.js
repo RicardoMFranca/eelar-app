@@ -44,7 +44,7 @@ export default function LoginScreen(props){
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}> 
       <ScrollView 
-        style={{flex: 1}}
+        style={[{flex: 1}, GeneralStyles.aligns.whiteBackground]}
         contentContainerStyle={{flexGrow: 1}}
         showsVerticalScrollIndicator={false}
       >

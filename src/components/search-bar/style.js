@@ -9,7 +9,8 @@ const Style = StyleSheet.create({
         backgroundColor: Colors.WHITE_DEFAULT,
         height: Mixins.scaleSize(56),
         borderRadius: Mixins.scaleSize(8),
-        padding: Mixins.scaleSize(16)
+        padding: Mixins.scaleSize(16),
+        color: Colors.BLACK_TONE_1
     },
     searchBtn: {
         position: 'absolute',

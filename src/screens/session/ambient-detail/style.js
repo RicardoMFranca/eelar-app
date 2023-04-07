@@ -73,7 +73,8 @@ const Style = StyleSheet.create({
         alignItems: 'center',
         paddingVertical: Mixins.scaleSize(16),
         borderBottomWidth: Mixins.scaleSize(1),
-        borderColor: Colors.rgba(Colors.BLACK_DEFAULT, 0.1)
+        borderColor: Colors.rgba(Colors.BLACK_DEFAULT, 0.1),
+        flex: 1
     },
     iconContainer: {
         height: Mixins.scaleSize(32),
@@ -88,7 +89,8 @@ const Style = StyleSheet.create({
     cardTitle: {
         ...Typography.FONT_BOLD,
         fontSize: Typography.FONT_SIZE_14,
-        color: Colors.BLACK_DEFAULT
+        color: Colors.BLACK_DEFAULT,
+        width: Mixins.WINDOW_WIDTH - Mixins.scaleSize(80)
     },
     cardInfo: {
         ...Typography.FONT_REGULAR,

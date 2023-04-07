@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Image, ScrollView, Text, View } from 'react-native';
 import Animated, { Extrapolate, interpolate, useAnimatedStyle, useSharedValue } from "react-native-reanimated";
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { GeneralStyles, Mixins, Colors } from '../../../styles';
 import Style from './style';
@@ -117,19 +117,19 @@ export default function AmbientDetailScreen(props){
     </>
   );
 
-  const ambientInfoHorizontalCard = () => (
-    <View style={Style.horizontalCard}>
+  const ambientInfoHorizontalCard = (info) => (
+    <View style={Style.horizontalCard} key={`info-${info.id}`}>
       <View style={Style.iconContainer}>
         <Icon 
           style={Style.cardIcon} 
-          name={'watch-later'} 
+          name={info.nome_icone ? info.nome_icone : 'info-outline'} 
           size={Mixins.scaleSize(20)} 
           color={Colors.BLACK_DEFAULT} 
         />
       </View>
       <View>
-        <Text style={Style.cardTitle}>Horário de funcionamento</Text>
-        <Text style={Style.cardInfo}>09:00 às 20:00</Text>
+        <Text style={Style.cardTitle}>{info.titulo}</Text>
+        <Text style={Style.cardInfo}>{info.descricao}</Text>
       </View>
     </View>
   );
@@ -143,23 +143,28 @@ export default function AmbientDetailScreen(props){
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{paddingBottom: Mixins.scaleSize(64)}}
+        style={GeneralStyles.aligns.whiteBackground}
       >
         {carousel}
         <View style={Style.ambientInfoContainer}>
           <View style={Style.nameCategoryAlign}>
             <Text style={Style.ambientName}>{ambient?.nome}</Text>
-            {ambient?.categorias?.map((item) => (
-              <View style={Style.category}>
-                <Text style={Style.categoryLabel}>{item?.nome}</Text>
-              </View>
-            ))}
+            {ambient?.categorias?.length > 0 && 
+              ambient.categorias.map((category) => (
+                <View style={Style.category} key={`categoria-${category.id}`}>
+                  <Text style={Style.categoryLabel}>{category.nome}</Text>
+                </View>
+              ))
+            }
           </View>
           <Text style={Style.ambientAddress}>{ambient?.endereco}</Text>
           <Text style={Style.ambientDescription}>{ambient?.descricao}</Text>
           <Text style={[GeneralStyles.fonts.title, Style.titleSpacing]}>Informações do Local</Text>
-          {ambientInfoHorizontalCard()}
-          {ambientInfoHorizontalCard()}
-          {ambientInfoHorizontalCard()}
+          {ambient?.informacoes?.length > 0 &&
+            ambient.informacoes.map((info) => (
+              ambientInfoHorizontalCard(info)
+            ))
+          }
         </View>
       </ScrollView>
       <View style={Style.mapsBtnContainer}>
