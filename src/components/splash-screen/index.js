@@ -7,7 +7,6 @@ export default function SplashScreen(){
   return ( 
     <Animated.View 
       style={Style.container}
-      exiting={FadeOut.duration(600).delay(1500)}
     >
       <StatusBar 
         translucent 

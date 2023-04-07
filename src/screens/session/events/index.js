@@ -12,6 +12,7 @@ import WavyHeader from '../../../components/wavy-header';
 import EventCard from '../../../components/event-card';
 import { staticCategories, staticEvents } from '../../../util/static-data';
 import NotFound from '../../../components/not-found';
+import Animated, { FadeInUp } from 'react-native-reanimated';
 
 export default function EventsScreen(props){
   const { setLoading } = useContext(LoaderContext);
@@ -53,20 +54,24 @@ export default function EventsScreen(props){
   };
 
   const selectedPlacesBanner = (
-    <TouchableOpacity 
-      style={[GeneralStyles.aligns.width24]}
-      onPress={() => props.navigation.navigate('Home')}
+    <Animated.View
+      entering={FadeInUp.duration(400).delay(400)}
     >
-      <LinearGradient
-        start={{x: 0, y: 0}} end={{x: 0, y: 0.99}}
-        locations={[0,0.99]}
-        colors={['rgba(64, 123, 255, 0.8)', '#9EBCFF']}
-        style={Style.recommendationBanner}
+      <TouchableOpacity 
+        style={[GeneralStyles.aligns.width24]}
+        onPress={() => props.navigation.navigate('Home')}
       >
-        <Image source={require('../../../assets/images/recommendation-banner/recommendation-banner.png')} style={Style.recommendationBannerImage}/>
-        <Text style={Style.selectedPlacesTitle}>Clique aqui e veja todos os lugares que separamos para você</Text>
-      </LinearGradient>
-    </TouchableOpacity>
+        <LinearGradient
+          start={{x: 0, y: 0}} end={{x: 0, y: 0.99}}
+          locations={[0,0.99]}
+          colors={['rgba(64, 123, 255, 0.8)', '#9EBCFF']}
+          style={Style.recommendationBanner}
+        >
+          <Image source={require('../../../assets/images/recommendation-banner/recommendation-banner.png')} style={Style.recommendationBannerImage}/>
+          <Text style={Style.selectedPlacesTitle}>Clique aqui e veja todos os lugares que separamos para você</Text>
+        </LinearGradient>
+      </TouchableOpacity>
+    </Animated.View>
   );
 
   return (
@@ -91,11 +96,12 @@ export default function EventsScreen(props){
           horizontal
         >
           {items.length > 0 ? 
-            items.map((item) => (
+            items.map((item, index) => (
               <EventCard
                 event={item}
                 onPress={() => props.navigation.navigate('EventDetails', {event: item})}
                 key={'evento-' + item.id}
+                cardIndex={index}
               />
             ))
             :
@@ -112,11 +118,12 @@ export default function EventsScreen(props){
           showsVerticalScrollIndicator={false}
           horizontal
         >
-          {categories.map((item) => (
+          {categories.map((item, index) => (
             <CategoryCard 
               category={item}
               key={'categoria-' + item.id}
               onPress={() => props.navigation.navigate("Category", {category: item})}
+              cardIndex={index}
             />
           ))}
         </ScrollView>

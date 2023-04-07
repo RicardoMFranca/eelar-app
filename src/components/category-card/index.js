@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
-import Animated, { SlideInRight, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
+import Animated, { SlideInRight } from 'react-native-reanimated';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import Style from './style';
@@ -15,7 +15,7 @@ export default function CategoryCard(props){
       onPress={onPress}
     >
       <Animated.View
-        // entering={SlideInRight.duration(400).delay(800 + cardIndex*200)}
+        entering={SlideInRight.duration(400).delay(cardIndex*200)}
         style={Style.categoryCard}
       >
         <View style={Style.categoryIconContainer}>

@@ -74,6 +74,7 @@ const Style = StyleSheet.create({
         paddingVertical: Mixins.scaleSize(16),
         borderBottomWidth: Mixins.scaleSize(1),
         borderColor: Colors.rgba(Colors.BLACK_DEFAULT, 0.1),
+        paddingHorizontal: Mixins.scaleSize(16),
         flex: 1
     },
     iconContainer: {

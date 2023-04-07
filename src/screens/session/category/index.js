@@ -12,6 +12,7 @@ import AmbientCard from '../../../components/ambient-card';
 import { staticAmbients } from '../../../util/static-data';
 import GobackBtn from '../../../components/go-back-btn';
 import { removeAccentes } from '../../../util/helpers';
+import Animated, { FadeInLeft, FadeInRight, FadeInUp } from 'react-native-reanimated';
 
 export default function CategoryScreen(props){
   const { setLoading } = useContext(LoaderContext);
@@ -68,11 +69,18 @@ export default function CategoryScreen(props){
         {...props}
         customStyle={Style.goBackBtn}
       />
-      <Image source={require('../../../assets/images/category-header-img/category-header-img.png')} style={Style.categoryHeaderImage}/>
-      <View style={Style.currentCategoryContainer}>
+      <Animated.Image 
+        source={require('../../../assets/images/category-header-img/category-header-img.png')} 
+        style={Style.categoryHeaderImage}
+        entering={FadeInRight.duration(400)}
+      />
+      <Animated.View 
+        style={Style.currentCategoryContainer}
+        entering={FadeInLeft.duration(400)}
+      >
         <Text style={Style.currentCategoryLabel}>Você está vendo a categoria de:</Text>
         <Text style={Style.currentCategory}>{props.route.params.category?.nome}</Text>
-      </View>
+      </Animated.View>
       <View style={Style.searchBarContainer}>
         <SearchBar 
           setValue={(text) => search(text)}
@@ -119,6 +127,7 @@ export default function CategoryScreen(props){
             customStyle={[Style.verticalListCard]}
             cardHeight={Mixins.scaleSize(200)}
             onPress={() => props.navigation.navigate('AmbientDetail', {ambient: item})}
+            cardIndex={index}
           />
         </View>
       )}

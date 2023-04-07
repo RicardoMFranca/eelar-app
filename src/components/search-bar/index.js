@@ -3,15 +3,15 @@ import Style from './style';
 import { TouchableOpacity, View, TextInput } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { Colors, Mixins } from '../../styles';
-import Animated, { FadeInDown, FadeInLeft, FadeInUp, SlideInUp } from 'react-native-reanimated';
+import Animated, { FadeInLeft } from 'react-native-reanimated';
 
 export default function SearchBar(props){
-  const { setValue } = props;
+  const { setValue, animated } = props;
   
   return (
     <Animated.View 
       style={Style.searchBarContainer}
-      // entering={FadeInLeft.duration(400).delay(400)}
+      entering={animated && FadeInLeft.duration(400).delay(400)}
     >
       <TextInput 
         style={Style.searchBar}

@@ -87,7 +87,7 @@ export const staticAmbients = [
             {id: 3, nome: 'Campo'}
         ],
         informacoes: [
-            {id: 2, titulo: 'Há banheiros públicos em condições de uso? Há bebedouros?', descricao: 'Não', nome_icone: 'toilet'},
+            {id: 2, titulo: 'Há banheiros públicos em condições de uso? Há bebedouros?', descricao: 'Sim', nome_icone: 'toilet'},
             {id: 3, titulo: 'Há sombra e arborização adequada?', descricao: 'Sim', nome_icone: 'tree-outline'},
             {id: 4, titulo: 'Há equipamentos de ginástica e musculação?', descricao: 'Sim', nome_icone: 'dumbbell'},
             {id: 5, titulo: 'Há área para crianças?', descricao: 'Não', nome_icone: 'human-male-child'},

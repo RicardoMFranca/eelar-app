@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import { Image, StatusBar, View, TouchableOpacity } from 'react-native';
-import Animated, { useAnimatedStyle, useSharedValue, withDelay, withTiming } from 'react-native-reanimated';
+import Animated, { ZoomIn } from 'react-native-reanimated';
 
 import SearchBar from '../search-bar';
 import GobackBtn from '../go-back-btn';
@@ -12,21 +12,10 @@ import { StorageService } from '../../services';
 
 export default function WavyHeader(props){
   const {data, setSearchedItems, goBackBtn, logout} = props;
-  const titleHeight = useSharedValue(0);
-
-  useEffect(() => {
-    titleHeight.value = withDelay(600, withTiming(48, {duration: 80}))
-  }, [])
   
   const search = (text) => {
     setSearchedItems(data?.filter((item) => removeAccentes(item.nome.toLowerCase()).includes(removeAccentes(text))));
   };
-
-  const titleHeightStyle = useAnimatedStyle(() => {
-    return {
-      height: titleHeight.value,
-    };
-  });
 
   const logoutBtn = () => {
     if(logout){
@@ -59,6 +48,7 @@ export default function WavyHeader(props){
       <View style={Style.headerContiner}>
         <View style={Style.headerTitleContainer}>
           <Animated.Text 
+          entering={ZoomIn.duration(300)}
             style={[Style.headerTitle()]}
           >
             Encontre Locais e{'\n'}Equipamentos Públicos
@@ -66,6 +56,7 @@ export default function WavyHeader(props){
         </View>
         <SearchBar
           setValue={(text) => search(text)}
+          animated
         />
       </View>
     </View>

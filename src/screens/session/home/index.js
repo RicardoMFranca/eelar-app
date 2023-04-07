@@ -48,7 +48,10 @@ export default function HomeScreen(props){
   };
   
   const availableEvents = (
-    <View style={GeneralStyles.aligns.width24}>
+    <View 
+      entering={FadeInUp.duration(400).delay(400)}
+      style={GeneralStyles.aligns.width24}
+    >
       <LinearGradient
         start={{x: 0, y: 0.6}} end={{x: 0, y: 1.0}}
         locations={[0,0.99]}
@@ -83,7 +86,7 @@ export default function HomeScreen(props){
       />
       <SafeAreaView style={GeneralStyles.aligns.container}>
         <Animated.Text
-          // entering={FadeInUp.duration(400).delay(400)}
+          entering={FadeInUp.duration(400).delay(400)}
           style={[GeneralStyles.aligns.sessionTitle, GeneralStyles.fonts.title]}
         >
           Categorias
@@ -106,7 +109,7 @@ export default function HomeScreen(props){
         </ScrollView>
         <View style={Style.selectedPlaces}>
           <Animated.Text 
-            // entering={FadeInUp.duration(600).delay(200)}
+            entering={FadeInUp.duration(600).delay(200)}
             style={[GeneralStyles.aligns.sessionTitle, GeneralStyles.fonts.title]}
           >
             Espaços próximos de você
@@ -121,11 +124,12 @@ export default function HomeScreen(props){
         >
           {
             items.length > 0 ?
-              items.map((item) => (
+              items.map((item, index) => (
                 <AmbientCard 
                   ambient={item}
                   key={'ambiente-' + item.id}
                   onPress={() => props.navigation.navigate('AmbientDetail', {ambient: item})}
+                  cardIndex={index}
                 />
               ))
               :
