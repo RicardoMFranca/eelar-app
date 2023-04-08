@@ -2,6 +2,9 @@ import { StyleSheet } from 'react-native';
 import { Colors, Mixins, Typography } from '../../../../styles';
 
 const Style = StyleSheet.create({
+    container: {
+        backgroundColor: Colors.BLACK_DEFAULT
+    },
     regularFont: {
         ...Typography.FONT_REGULAR,
         color: Colors.rgba(Colors.WHITE_DEFAULT, 0.8)
@@ -42,9 +45,9 @@ const Style = StyleSheet.create({
     },
     linearGradientContainer: {
         position: 'absolute',
-        left: 0,
+        left: Mixins.scaleSize(-24),
         width: Mixins.WINDOW_WIDTH,
-        bottom: 0,
+        top: Mixins.scaleSize(-80),
         zIndex: 3,
     },
     linearGradient: {
@@ -86,6 +89,12 @@ const Style = StyleSheet.create({
         justifyContent: 'center',
         paddingHorizontal: Mixins.scaleSize(24)
     },
+    goBackBtn: {
+        position: 'absolute',
+        top: Mixins.scaleSize(48),
+        zIndex: 3,
+        left: Mixins.scaleSize(24)
+    }
 });
 
 export default Style;

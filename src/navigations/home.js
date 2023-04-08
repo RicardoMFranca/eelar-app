@@ -1,12 +1,12 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
 
 import HomeScreen from '../screens/session/home';
 import EventsStack from './events';
 import CategoryScreen from '../screens/session/category';
 import AmbientDetailScreen from '../screens/session/ambient-detail';
 
-const Stack = createStackNavigator();
+const Stack = createSharedElementStackNavigator();
 
 export default function HomeStack(){
   return (
@@ -16,9 +16,9 @@ export default function HomeStack(){
       }}
     > 
       <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="AmbientDetail" component={AmbientDetailScreen} />
       <Stack.Screen name="EventsStack" component={EventsStack} />
       <Stack.Screen name="Category" component={CategoryScreen} />
-      <Stack.Screen name="AmbientDetail" component={AmbientDetailScreen} />
     </Stack.Navigator>
   );
 }

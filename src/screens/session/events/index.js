@@ -96,16 +96,16 @@ export default function EventsScreen(props){
           horizontal
         >
           {items.length > 0 ? 
-            items.map((item, index) => (
-              <EventCard
-                event={item}
-                onPress={() => props.navigation.navigate('EventDetails', {event: item})}
-                key={'evento-' + item.id}
-                cardIndex={index}
-              />
-            ))
+              items.map((item, index) => (
+                <EventCard
+                  event={item}
+                  onPress={() => props.navigation.navigate('EventDetails', {event: item})}
+                  key={'evento-' + item.id}
+                  cardIndex={index}
+                />
+              ))
             :
-            <NotFound/>
+              <NotFound/>
           }
         </ScrollView>
 

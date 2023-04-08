@@ -3,6 +3,7 @@ import Style from './style';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Animated, { SlideInRight } from 'react-native-reanimated';
+import { SharedElement } from 'react-navigation-shared-element';
 
 import { handleEventDate } from '../../util/helpers';
 import { GeneralStyles } from '../../styles';
@@ -18,7 +19,9 @@ export default function EventCard(props){
       <Animated.View
         entering={SlideInRight.duration(600).delay(cardIndex*200)}
       >
-        <Image source={event?.foto_principal} style={Style.eventThumbnail}/>
+        <SharedElement id={`${event.id}`}>
+          <Image source={event?.foto_principal} style={Style.eventThumbnail}/>
+        </SharedElement>
         <View style={Style.eventDate}>
           <Text style={GeneralStyles.fonts.eventMonth}>{handleEventDate('month', event?.data)}</Text>
           <Text style={GeneralStyles.fonts.eventDay}>{handleEventDate('day', event?.data)}</Text>

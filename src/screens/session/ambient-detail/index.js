@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Image, ScrollView, Text, View } from 'react-native';
 import Animated, { Extrapolate, FadeIn, FadeInDown, interpolate, useAnimatedStyle, useSharedValue } from "react-native-reanimated";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Carousel from 'react-native-reanimated-carousel';
 
 import { GeneralStyles, Mixins, Colors } from '../../../styles';
 import Style from './style';
 
-import Carousel from 'react-native-reanimated-carousel';
 import DefaultBtn from '../../../components/buttons/default-btn';
 import GobackBtn from '../../../components/go-back-btn';
 import { goToMaps } from '../../../util/helpers';
@@ -96,7 +96,7 @@ export default function AmbientDetailScreen(props){
         }
         data={ambient?.fotos}
         scrollAnimationDuration={600}
-        renderItem={({ item, index }) => (
+        renderItem={({ item }) => (
           <Image source={item} style={Style.carouselImage} />
         )}
       />
@@ -140,6 +140,9 @@ export default function AmbientDetailScreen(props){
 
   return (
     <>
+      {/* <SharedElement id='7'>
+        <Image source={require('../../../assets/images/temp/viagem/viagem-1.jpg')} style={{height: 230, width: Mixins.WINDOW_WIDTH}}/>
+      </SharedElement> */}
       <GobackBtn
         {...props}
       />

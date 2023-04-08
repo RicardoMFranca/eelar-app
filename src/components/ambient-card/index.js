@@ -2,7 +2,7 @@ import React from 'react';
 import Style from './style';
 import { Text, TouchableOpacity, Image } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import Animated, { FadeIn, FadeInDown, FadeInUp } from 'react-native-reanimated';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 
 export default function AmbientCard(props){
   const { ambient, cardHeight, customStyle, onPress, cardIndex } = props;
@@ -16,7 +16,6 @@ export default function AmbientCard(props){
         entering={FadeInDown.duration(300).delay(cardIndex*200)}
       >
         <Image source={ambient?.foto_principal} style={[Style.ambientThumbNail, cardHeight && {height: cardHeight}]}/>
-        {/* <Image source={{uri: ambient?.foto_principal}} /> */}
         <LinearGradient
           start={{x: 0, y: 0}} end={{x: 0, y: 1.0}}
           locations={[0, 1]}
