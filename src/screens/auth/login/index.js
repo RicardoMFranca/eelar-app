@@ -17,8 +17,8 @@ import DefaultInput from '../../../components/forms/default-input';
 export default function LoginScreen(props){
   const { setLoading } = useContext(LoaderContext);
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('usuario@anonimo.com');
+  const [password, setPassword] = useState('q%!%q+-^.vKD+&J;');
   const [show_password, setShowPassword] = useState(false);
 
   const login = async (email, password) => {
@@ -69,6 +69,7 @@ export default function LoginScreen(props){
               }}
 
               placeholderTextColor={Colors.rgba(Colors.BLACK_DEFAULT, 0.4)}
+              editable={false}
             />
             <DefaultInput 
               value={password}
@@ -80,22 +81,22 @@ export default function LoginScreen(props){
               rightBtnIconName={show_password ? "visibility-off" : "visibility"}
               customStyle={{marginTop: Mixins.scaleSize(24)}}
               placeholderTextColor={Colors.rgba(Colors.BLACK_DEFAULT, 0.4)}
+              editable={false}
             />
-
             <DefaultBtn 
               onPress={() => loginTest(email, password)}
-              label={'Entrar'}
+              label={'Entrar sem cadastro'}
               disabled={!email || !password}
               textColor={Colors.WHITE_DEFAULT}
               customStyle={{marginTop: Mixins.scaleSize(24)}}
             />
-            <TouchableOpacity 
+            {/* <TouchableOpacity 
               onPress={() => props.navigation.navigate("Register")}
             >
               <Text style={Style.registerBtn}>Não é cadastrado? Cadastre-se
                 <Text style={Style.registerBtnBold}> aqui!</Text>
               </Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
             
           </View>
         </SafeAreaView>

@@ -26,14 +26,14 @@ export default function InitialScreen(props){
             <DefaultBtn 
               onPress={() => props.navigation.navigate("Login")}
               label='Entrar'
-              customStyle={{marginBottom: Mixins.scaleSize(10), backgroundColor: Colors.SECONDARY}}
+              customStyle={{marginBottom: Mixins.scaleSize(24), backgroundColor: Colors.SECONDARY}}
             />
-            <DefaultBtn 
+            {/* <DefaultBtn 
               onPress={() => props.navigation.navigate("Register")}
               label='Cadastrar'
               customStyle={{marginBottom: Mixins.scaleSize(24), backgroundColor: Colors.WHITE_DEFAULT}}
               textColor={Colors.BLACK_TONE_1}
-            />
+            /> */}
           </View>
         </View>
       </SafeAreaView>

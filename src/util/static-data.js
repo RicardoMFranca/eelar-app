@@ -223,7 +223,7 @@ export const staticEvents = [
         id: 1, 
         nome: "Aulão de Yoga", 
         categoria: 'Aulão', 
-        data: '2023-04-18', 
+        data: '2023-05-18', 
         horario: '10:30 - 11:00', 
         endereco: 'Av. Visconde do Rio Branco, 726 - São Domingos', 
         foto_principal: require('../assets/images/temp/yoga/yoga.png'), 

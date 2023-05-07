@@ -12,7 +12,8 @@ import AmbientCard from '../../../components/ambient-card';
 import { staticAmbients } from '../../../util/static-data';
 import GobackBtn from '../../../components/go-back-btn';
 import { removeAccentes } from '../../../util/helpers';
-import Animated, { FadeInLeft, FadeInRight, FadeInUp } from 'react-native-reanimated';
+import Animated, { FadeInLeft, FadeInRight } from 'react-native-reanimated';
+import NotFound from '../../../components/not-found';
 
 export default function CategoryScreen(props){
   const { setLoading } = useContext(LoaderContext);
@@ -137,7 +138,13 @@ export default function CategoryScreen(props){
   return (
     <View style={[GeneralStyles.aligns.container, GeneralStyles.aligns.whiteBackground]}>
       {categoryHeader}
-      {ambientsList}
+      {searchedItems.length > 0 ? 
+          ambientsList
+        :
+          <View style={Style.notFoundAlign}>
+            <NotFound/>
+          </View>
+      }
     </View>
   );
 }

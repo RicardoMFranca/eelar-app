@@ -84,6 +84,7 @@ export default function EventsScreen(props){
         {...props}
         setSearchedItems={setItems}
         data={events}
+        eventsHeader
         goBackBtn
       />
       <SafeAreaView style={GeneralStyles.aligns.container}>

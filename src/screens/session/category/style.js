@@ -103,6 +103,9 @@ const Style = StyleSheet.create({
         backgroundColor: Colors.rgba(Colors.PRIMARY, isLastBackGroundSquare ? 0.4 : 0.8),
         borderRadius: Mixins.scaleSize(12)
     }),
+    notFoundAlign: {
+        marginTop: Mixins.scaleSize(64)
+    }
 });
 
 export default Style;

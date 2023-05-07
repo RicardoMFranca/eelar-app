@@ -35,8 +35,8 @@ const Style = StyleSheet.create({
     thumbnailContainer:{
         flex: 1,
         position: 'relative',
-        maxHeight: Mixins.WINDOW_HEIGHT - Mixins.scaleSize(180),
-        minHeight: Mixins.WINDOW_HEIGHT - Mixins.scaleSize(180),
+        maxHeight: Mixins.WINDOW_HEIGHT - Mixins.scaleSize(240),
+        minHeight: Mixins.WINDOW_HEIGHT - Mixins.scaleSize(240),
     },
     eventInfoContainer: {
         backgroundColor: Colors.BLACK_DEFAULT,

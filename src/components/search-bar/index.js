@@ -6,7 +6,7 @@ import { Colors, Mixins } from '../../styles';
 import Animated, { FadeInLeft } from 'react-native-reanimated';
 
 export default function SearchBar(props){
-  const { setValue, animated } = props;
+  const { setValue, animated, eventSearch } = props;
   
   return (
     <Animated.View 
@@ -15,7 +15,7 @@ export default function SearchBar(props){
     >
       <TextInput 
         style={Style.searchBar}
-        placeholder="Que lugar você quer conhecer hoje?"
+        placeholder={eventSearch ? "Procure eventos aqui" : "Que lugar você quer conhecer hoje?"} 
         onChangeText={setValue}
         placeholderTextColor={Colors.GRAY_DARK}
       />

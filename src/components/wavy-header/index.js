@@ -11,7 +11,7 @@ import { removeAccentes } from '../../util/helpers';
 import { StorageService } from '../../services';
 
 export default function WavyHeader(props){
-  const {data, setSearchedItems, goBackBtn, logout} = props;
+  const {data, setSearchedItems, goBackBtn, logout, eventsHeader} = props;
   
   const search = (text) => {
     setSearchedItems(data?.filter((item) => removeAccentes(item.nome.toLowerCase()).includes(removeAccentes(text))));
@@ -51,12 +51,13 @@ export default function WavyHeader(props){
           entering={ZoomIn.duration(300)}
             style={[Style.headerTitle()]}
           >
-            Encontre Locais e{'\n'}Equipamentos Públicos
+            {eventsHeader ? 'Encontre eventos\ne atividades' : 'Encontre Locais e\nEquipamentos Públicos'}
           </Animated.Text>
         </View>
         <SearchBar
           setValue={(text) => search(text)}
           animated
+          eventSearch={eventsHeader}
         />
       </View>
     </View>
