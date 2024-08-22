@@ -40,7 +40,8 @@ const Style = StyleSheet.create({
     ambientName: {
         ...Typography.FONT_BOLD,
         fontSize: Typography.FONT_SIZE_16,
-        color: Colors.BLACK_DEFAULT
+        color: Colors.BLACK_DEFAULT,
+        maxWidth: Mixins.scaleSize(280)
     },
     category: {
         paddingHorizontal: Mixins.scaleSize(12),

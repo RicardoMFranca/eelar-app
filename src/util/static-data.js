@@ -48,6 +48,77 @@ export const staticAmbients = [
         ]
     },
     {
+        id: 10, 
+        nome: 'parque Esportivo da Concha Acústica de Niterói', 
+        endereco: 'Concha Acústica de Niterói - Centro', 
+        foto_principal: require('../assets/images/temp/concha/concha-1.jpg'),
+        fotos: [
+            require('../assets/images/temp/concha/concha-1.jpg'),
+            require('../assets/images/temp/concha/concha-2.jpg'),
+            require('../assets/images/temp/concha/concha-3.jpeg'),
+            require('../assets/images/temp/concha/concha-4.jpeg'),
+        ],
+        descricao: 'O Parque Esportivo da Concha Acústica de Niterói é um dos principais pontos de encontro para os amantes de esportes e atividades ao ar livre na cidade. Localizado na área da famosa Concha Acústica, o parque oferece uma infraestrutura completa para a prática de diversas modalidades esportivas. Os visitantes podem aproveitar quadras poliesportivas, pistas de corrida e caminhada, além de equipamentos de musculação e ginástica.',
+        categorias: [
+            {id: 3, nome: 'Parque'}
+        ],
+        informacoes: [
+            {id: 2, titulo: 'Há banheiros públicos em condições de uso? Há bebedouros?', descricao: 'Não', nome_icone: 'toilet'},
+            {id: 3, titulo: 'Há sombra e arborização adequada?', descricao: 'Não', nome_icone: 'tree-outline'},
+            {id: 4, titulo: 'Há equipamentos de ginástica e musculação?', descricao: 'Sim', nome_icone: 'dumbbell'},
+            {id: 5, titulo: 'Há área para crianças?', descricao: 'Sim', nome_icone: 'human-male-child'},
+            {id: 10, titulo: 'Há área para caminhada?', descricao: 'Sim', nome_icone: 'walk'},
+        ]
+    },
+    {
+        id: 11, 
+        nome: 'Complexo Esportivo Roberto Silveira', 
+        endereco: "Ponta D'areia", 
+        foto_principal: require('../assets/images/temp/roberto/roberto-1.jpg'),
+        fotos: [
+            require('../assets/images/temp/roberto/roberto-1.jpg'),
+            require('../assets/images/temp/roberto/roberto-2.jpg'),
+            require('../assets/images/temp/roberto/roberto-3.jpg'),
+            require('../assets/images/temp/roberto/roberto-4.jpg'),
+            require('../assets/images/temp/roberto/roberto-5.jpg'),
+        ],
+        descricao: 'O Complexo Esportivo Roberto Silveira é um destino ideal para todas as idades, oferecendo uma infraestrutura completa com áreas de recreação para crianças, campo de futebol, bancos confortáveis, banheiros públicos em boas condições, bebedouros para garantir a hidratação e espaços equipados com churrasqueiras para eventos e piqueniques. Com áreas verdes e bem arborizadas, o parque proporciona um ambiente agradável e seguro para lazer em família.',
+        categorias: [
+            {id: 3, nome: 'Parque'}
+        ],
+        informacoes: [
+            {id: 2, titulo: 'Há banheiros públicos em condições de uso? Há bebedouros?', descricao: 'Sim', nome_icone: 'toilet'},
+            {id: 3, titulo: 'Há sombra e arborização adequada?', descricao: 'Sim', nome_icone: 'tree-outline'},
+            {id: 4, titulo: 'Há equipamentos de ginástica e musculação?', descricao: 'Sim', nome_icone: 'dumbbell'},
+            {id: 5, titulo: 'Há área para crianças?', descricao: 'Sim', nome_icone: 'human-male-child'},
+            {id: 10, titulo: 'Há área para caminhada?', descricao: 'Sim', nome_icone: 'walk'},
+        ]
+    },
+    {
+        id: 12, 
+        nome: 'Centro De Artes E Esportes Unificados Ismael Silva', 
+        endereco: "Estr. Gen. Eurico Gaspar Dutra, 34 - Jurujuba, Niterói - RJ, 24370-195", 
+        foto_principal: require('../assets/images/temp/ceu/ceu-1.jpeg'),
+        fotos: [
+            require('../assets/images/temp/ceu/ceu-1.jpeg'),
+            require('../assets/images/temp/ceu/ceu-2.jpeg'),
+            require('../assets/images/temp/ceu/ceu-3.jpeg'),
+            require('../assets/images/temp/ceu/ceu-4.jpeg'),
+            require('../assets/images/temp/ceu/ceu-5.jpeg'),
+        ],
+        descricao: 'O Centro de Artes e Esportes Unificados Ismael Silva, em Jurujuba, é um complexo esportivo, social e cultural, que abriga biblioteca, telecentro, quadra de esportes, área de lazer, cinema, cineteatro e salas multiuso. Reformado em 2020 pela Secretaria Municipal das Culturas, o local tem cerca de 3 mil m², com atividades totalmente gratuitas para a população. Integrando cultura, esporte, lazer e educação, serviços sócio-assistenciais e inclusão digital, o CEU foi inaugurado em 2015, fruto de uma parceria entre o Governo Federal e a Prefeitura de Niterói.',
+        categorias: [
+            {id: 3, nome: 'Parque'}
+        ],
+        informacoes: [
+            {id: 2, titulo: 'Há banheiros públicos em condições de uso? Há bebedouros?', descricao: 'Sim', nome_icone: 'toilet'},
+            {id: 3, titulo: 'Há sombra e arborização adequada?', descricao: 'Sim', nome_icone: 'tree-outline'},
+            {id: 4, titulo: 'Há equipamentos de ginástica e musculação?', descricao: 'Não', nome_icone: 'dumbbell'},
+            {id: 5, titulo: 'Há área para crianças?', descricao: 'Não', nome_icone: 'human-male-child'},
+            {id: 10, titulo: 'Há área para caminhada?', descricao: 'Não', nome_icone: 'walk'},
+        ]
+    },
+    {
         id: 8, 
         nome: 'Campo de São Bento', 
         endereco: 'Av. Roberto Silveira - Icaraí', 
@@ -223,7 +294,7 @@ export const staticEvents = [
         id: 1, 
         nome: "Aulão de Yoga", 
         categoria: 'Aulão', 
-        data: '2023-05-18', 
+        data: '2024-08-18', 
         horario: '10:30 - 11:00', 
         endereco: 'Av. Visconde do Rio Branco, 726 - São Domingos', 
         foto_principal: require('../assets/images/temp/yoga/yoga.png'), 
@@ -233,7 +304,7 @@ export const staticEvents = [
         id: 2, 
         nome: "Djavan na praia", 
         categoria: 'Show', 
-        data: '2023-06-28', 
+        data: '2024-09-28', 
         horario: '20:00 - 22:00', 
         endereco: 'Av. Quintino Bocaiúva, 508 - São Francisco', 
         foto_principal: require('../assets/images/temp/djavan/djavan.jpg'), 
@@ -243,7 +314,7 @@ export const staticEvents = [
         id: 3, 
         nome: "Stand Up com Thiago Santineli", 
         categoria: 'Stand Up', 
-        data: '2023-05-12', 
+        data: '2024-07-12', 
         horario: '18:00 - 20:00', 
         endereco: 'Rua Quinze de Novembro, 35 - Centro', 
         foto_principal: require('../assets/images/temp/santineli/santineli.jpg'), 
@@ -253,7 +324,7 @@ export const staticEvents = [
         id: 4, 
         nome: "Rio Roller", 
         categoria: 'Aulão', 
-        data: '2023-05-22', 
+        data: '2024-07-22', 
         horario: '10:00 - 12:00', 
         endereco: 'R. Jorn. Rogério Coelho Neto - Centro', 
         foto_principal: require('../assets/images/temp/patins/patins.jpg'), 
